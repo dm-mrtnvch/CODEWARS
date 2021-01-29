@@ -26,3 +26,23 @@ function findNeedle(haystack) {
 function abbrevName(name){
     return name.split(' ').map(n => n[0].toUpperCase()).join('.')
 }
+
+// Convert number to reversed array of digits
+function digitize(n) {
+    return n.toString().split('').map(num => parseInt(num)).reverse()
+}
+
+// Keep Hydrated!
+function litres(time) {
+    return Math.floor(time / 2)
+}
+
+// Basic Mathematical Operations
+function basicOp(operation, value1, value2) {
+    return eval(value1 + operation + value2)
+}
+
+// Century From Year
+function century(year) {
+    return Math.ceil(year / 100)
+}
