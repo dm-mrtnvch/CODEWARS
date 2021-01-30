@@ -46,3 +46,26 @@ function basicOp(operation, value1, value2) {
 function century(year) {
     return Math.ceil(year / 100)
 }
+
+// Is n divisible by x and y?
+const isDivisible = (n, x, y) => n % x == 0 && n % y == 0
+
+// Square(n) Sum
+function squareSum(numbers){
+    return numbers.reduce((result, number) => result + (Math.pow(number, 2)), 0) // (number * number)
+}
+
+// Convert a Number to a String!
+function numberToString(num) {
+    return `${num}`
+}
+
+// Counting sheep...
+function countSheeps(arrayOfSheep) {
+    return arrayOfSheep.filter(sheep => sheep === true).length
+}
+
+// Convert boolean values to strings 'Yes' or 'No'.
+function boolToWord( bool ){
+    return bool ? 'Yes' : 'No'
+}
