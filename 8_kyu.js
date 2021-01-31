@@ -69,3 +69,31 @@ function countSheeps(arrayOfSheep) {
 function boolToWord( bool ){
     return bool ? 'Yes' : 'No'
 }
+
+// Reversed Strings
+function solution(str){
+    return str.split('').reverse().join('')
+}
+
+// Grasshopper - Summation
+var summation = function (num) {
+    return result = (num * (num + 1)) / 2;
+}
+
+// Remove String Spaces
+function noSpace(x){
+    return x.split(' ').join('')
+}
+
+// String repeat
+function repeatStr (n, s) {
+    if (n > 0)
+        return s.repeat(n);
+    else
+        return "";
+}
+
+// Return Negative
+function makeNegative(num) {
+    return num > 0 ? -num : num
+}
