@@ -97,3 +97,26 @@ function repeatStr (n, s) {
 function makeNegative(num) {
     return num > 0 ? -num : num
 }
+
+// Remove First and Last Character
+const removeChar = str => str.substr(1, str.length -2);
+
+// Opposite number
+function opposite(number) {
+    return -1 * number
+}
+
+// Sum of positive
+function positiveSum(arr) {
+    return !arr.length ? 0 : arr.reduce((result, number) => number > 0 ? result + number : result, 0);
+}
+
+// Even or Odd
+function even_or_odd(number) {
+    return number % 2 ? 'Odd' : 'Even'
+}
+
+// Multiply
+function multiply(a, b){
+    return a * b
+}
