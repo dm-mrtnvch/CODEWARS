@@ -173,3 +173,44 @@ function greet() {
     let message = 'hello world!'
     return message
 }
+
+// 31. Count the Monkeys!
+function monkeyCount(n) {
+    let monkeys = [];
+    for (let i = 1; i < n+1; i++) {
+        monkeys.push(i);
+    }
+    return monkeys;
+}
+
+// 32. Jenny's secret message
+function greet(name){
+    if(name !== "Johnny") {
+        return "Hello, " + name + "!";
+    } else {
+        return "Hello, my love!";
+    }
+}
+
+// 33. Calculate average
+function find_average(array) {
+    let total = 0
+    for(let i = 0; i < array.length; i++) {
+        total += array[i]
+    }
+    let avarage = total / array.length
+    return avarage
+}
+
+// 34. Array plus array
+function arrayPlusArray(arr1, arr2) {
+    return total = arr1.concat(arr2).reduce((x, y) => x + y)
+}
+
+// 35. Do I get a bonus?
+function bonusTime(salary, bonus) {
+    if(bonus)
+        return '£' + salary*10
+    else
+        return '£'+salary;
+}
