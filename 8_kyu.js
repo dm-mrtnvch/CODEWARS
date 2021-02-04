@@ -214,3 +214,48 @@ function bonusTime(salary, bonus) {
     else
         return '£'+salary;
 }
+
+// 36. Reversed Words
+function reverseWords(str){
+    return str.split(' ').reverse().join(' ');
+}
+
+// 37. Rock Paper Scissors!
+const rps = (p1, p2) => {
+    let rank = {
+        'scissors' : 'paper',
+        'paper' : 'rock',
+        'rock' : 'scissors'
+    }
+    if(p1 == p2) return 'Draw!'
+    if(rank[p1] == p2){
+        return 'Player 1 won!'
+    } else {
+        return'Player 2 won!'
+    }
+}
+
+// 38. DNA to RNA Conversion
+function DNAtoRNA(dna) {
+    let str = '';
+    for(let i = 0; i < dna.length; i++){
+        if(dna[i] == "T"){
+            str += "U";
+        }else{
+            str += dna[i];
+        }
+    }
+    return str;
+}
+
+// 39. How good are you really?
+function betterThanAverage(classPoints, yourPoints) {
+    let total = 0;
+    for (let i = 0; i < classPoints.length; i++) {
+        total += classPoints[i];
+    }
+    return total / classPoints.length < yourPoints ? true : false;
+}
+
+// 40. You only need one - Beginner
+const check = (a, x) => a.includes(x);
