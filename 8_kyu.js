@@ -259,3 +259,84 @@ function betterThanAverage(classPoints, yourPoints) {
 
 // 40. You only need one - Beginner
 const check = (a, x) => a.includes(x);
+
+// 41. Are You Playing Banjo?
+function areYouPlayingBanjo(name) {
+    if (name.toLowerCase().charAt(0) == 'r'){
+        name = name + ' plays banjo';
+    }else{
+        name = name + ' does not play banjo';
+    }
+    return name;
+}
+
+// 42. Expressions Matter
+function expressionMatter(a, b, c) {
+    return Math.max(a+b+c, a*b*c, (a+b)*c, a*(b+c));
+}
+
+// 43. Count by X
+function countBy(x, n) {
+    var z = [];
+    for (i = 1; i <= n; i++) {
+        z.push(x * i);
+    }
+    return z;
+}
+
+// 44. Beginner Series #1 School Paperwork
+function paperwork(n, m) {
+    if(n<0 || m<0) return 0;
+    return n*m;
+}
+
+// 45. Sum Arrays
+function sum (numbers) {
+    let total= 0;
+    for (i=0; i<numbers.length; i++) {
+        total+= numbers[i];
+    }
+    return total;
+}
+
+// 46. Find the first non-consecutive number
+function firstNonConsecutive (arr) {
+
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i + 1] != (arr[i] + 1)) {
+            return arr[i + 1]
+        }
+    }
+    return null
+}
+
+// 47. Find Maximum and Minimum Values of a List
+let min = function(list){
+    return Math.min(...list)
+}
+let max = function(list){
+    return Math.max(...list)
+}
+
+// 48. If you can't sleep, just count sheep!!
+function countSheep(num){
+    let s = ''
+    for(let i = 1; i <= num; i++){
+        s = s + i + ' sheep...'
+    }
+    return s
+}
+
+// 49. Beginner - Reduce but Grow
+function grow(x) {
+    let total = 1;
+    for (i=0; i<x.length; i++) {
+        total *= x[i];
+    }
+    return total;
+}
+
+// 50. Is he gonna survive?
+function hero(bullets, dragons){
+    return dragons * 2 <= bullets
+}
