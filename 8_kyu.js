@@ -340,3 +340,93 @@ function grow(x) {
 function hero(bullets, dragons){
     return dragons * 2 <= bullets
 }
+
+// 51. The Feast of Many Beasts
+function feast(beast, dish) {
+    return beast[0] === dish[0] && beast[beast.length - 1] === dish[dish.length - 1]
+}
+
+// 52. Count Odd Numbers below n
+function oddCount(n){
+    return Math.floor(n/2);
+}
+
+// 53. Double Char
+function doubleChar(str) {
+    return str.split('').map(letter => letter + letter).join('')
+}
+
+// 54. Convert a Boolean to a String
+function booleanToString(b){
+    return b ? 'true' : 'false';
+}
+
+// 55. Will you make it?
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+    if (distanceToPump/fuelLeft <= mpg) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+// 56. Sum Mixed Array
+function sumMix(x){
+    let total=0;
+    for (i = 0; i <x.length; i++) {
+        total += Number(x[i]);
+    }
+    return total;
+}
+
+// 57. Simple multiplication
+function simpleMultiplication(number){
+    if (number % 2 === 0) return number * 8;
+    else return number * 9;
+}
+
+// 58. Welcome!
+function greet(language) {
+    let state = {
+        english: 'Welcome',
+        czech: 'Vitejte',
+        danish: 'Velkomst',
+        dutch: 'Welkom',
+        estonian: 'Tere tulemast',
+        finnish: 'Tervetuloa',
+        flemish: 'Welgekomen',
+        french: 'Bienvenue',
+        german: 'Willkommen',
+        irish: 'Failte',
+        italian: 'Benvenuto',
+        latvian: 'Gaidits',
+        lithuanian: 'Laukiamas',
+        polish: 'Witamy',
+        spanish: 'Bienvenido',
+        swedish: 'Valkommen',
+        welsh: 'Croeso'
+    }
+    for(let key in state){
+        if(key === language){
+            return state[key]
+        }
+    }
+    return state['english']
+}
+
+// 59. altERnaTIng cAsE <=> ALTerNAtiNG CaSe
+String.prototype.toAlternatingCase = function () {
+    return this.split('').map(changeCase).join('');
+}
+function changeCase(char){
+    if(char.toLowerCase() === char){
+        return char.toUpperCase();
+    }else{
+        return char.toLowerCase();
+    }
+}
+
+// 60. Returning Strings
+function greet(name){
+    return `Hello, ${name} how are you doing today?`;
+}
