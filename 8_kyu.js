@@ -76,7 +76,7 @@ function solution(str){
 }
 
 // 16. Grasshopper - Summation
-var summation = function (num) {
+let summation = function (num) {
     return result = (num * (num + 1)) / 2;
 }
 
@@ -277,7 +277,7 @@ function expressionMatter(a, b, c) {
 
 // 43. Count by X
 function countBy(x, n) {
-    var z = [];
+    let z = [];
     for (i = 1; i <= n; i++) {
         z.push(x * i);
     }
@@ -429,4 +429,71 @@ function changeCase(char){
 // 60. Returning Strings
 function greet(name){
     return `Hello, ${name} how are you doing today?`;
+}
+
+// 61. Find numbers which are divisible by given number
+function divisibleBy(numbers, divisor) {
+    return numbers.filter(n => n % divisor === 0)
+}
+
+// 62. Will there be enough space?
+function enough(cap, on, wait) {
+    if (cap - on<wait) {
+        return wait+on-cap;
+    } else  {
+        return 0;
+    }
+}
+
+// 63. Convert a string to an array
+function stringToArray(string){
+    return string.split(' ');
+}
+
+// 64. Removing Elements
+function removeEveryOther(arr){
+    return arr.filter((i, index) => index%2 === 0)
+}
+
+// 65. Can we divide it?
+function isDivideBy(number, a, b) {
+    if ((number % a === 0) && (number % b === 0))
+    {
+        return true
+    }
+    else
+    {
+        return false
+    }
+}
+
+// 66. Sentence Smash
+function smash (words) {
+    "use strict";
+    return words.join(' ');
+}
+
+// 67. Correct the mistakes of the character recognition software
+const correct = string =>
+    string
+        .split('')
+        .map(char => {
+            if (char === '5') return 'S'
+            if (char === '0') return 'O'
+            if (char === '1') return 'I'
+            return char
+        })
+        .join('')
+
+// 68. L1: Set Alarm
+function setAlarm(employed, vacation){
+    return (employed && !vacation) ? true : false;
+}
+
+// 69. MakeUpperCase
+function makeUpperCase(str) {return str.toUpperCase()}
+
+// 70. Beginner Series #4 Cockroach
+function cockroachSpeed(s) {
+    return Math.floor(s/3.6*100);
 }
