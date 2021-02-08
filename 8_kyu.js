@@ -497,3 +497,105 @@ function makeUpperCase(str) {return str.toUpperCase()}
 function cockroachSpeed(s) {
     return Math.floor(s/3.6*100);
 }
+
+// 71. I love you, a little , a lot, passionately ... not at all
+function howMuchILoveYou(nbPetals) {
+    let arr = ['I love you', 'a little', 'a lot', 'passionately', 'madly', 'not at all'];
+    for (let i = 0; i <= nbPetals; i++){
+        arr.push(arr[i]);
+    }
+    return arr[nbPetals-1];
+}
+
+// 72. Switch it Up!
+function switchItUp(number){
+    switch(number){
+        case 0: return 'Zero'
+        case 1: return 'One'
+        case 2: return 'Two'
+        case 3: return 'Three'
+        case 4: return 'Four'
+        case 5: return 'Five'
+        case 6: return 'Six'
+        case 7: return 'Seven'
+        case 8: return 'Eight'
+        case 9: return 'Nine'
+        default: alert('type number from 0 till 9')
+    }
+}
+
+// 73. Stringy Strings
+function stringy(size) {
+    let str = ''
+    for (let i = 1; i < size+1; i++){
+        if (i % 2 === 0){
+            str +='0'
+        } else {
+            str += '1'
+        }
+    }
+    return str
+}
+
+// 74. Third Angle of a Triangle
+function otherAngle(a, b) {
+    return thirdAngle = 180 - (a + b);
+}
+
+// 75. N-th Power
+function index(array, n){
+    if(array.length <= n) {
+        return -1;
+    }
+    return Math.pow(array[n],n);
+}
+
+// 76. You Can't Code Under Pressure #1
+function doubleInteger(i) {
+    return i * 2;
+}
+
+// 77. Remove exclamation marks
+function removeExclamationMarks(s) {
+    return s.replace(/!/gi, '');
+}
+
+// 78. Grasshopper - Grade book
+function getGrade (s1, s2, s3) {
+    let scores = (s1 + s2 + s3) / 3
+    if(scores >= 90) return 'A'
+    if(scores >= 80) return 'B'
+    if(scores >= 70) return 'C'
+    if(scores >= 60) return 'D'
+    if(scores < 60) return 'F'
+}
+
+// 79. Get Planet Name By ID
+function getPlanetName(id){
+    switch(id){
+        case 1:
+            return 'Mercury'
+        case 2:
+            return 'Venus'
+        case 3:
+            return 'Earth'
+        case 4:
+            return 'Mars'
+        case 5:
+            return 'Jupiter'
+        case 6:
+            return 'Saturn'
+        case 7:
+            return 'Uranus'
+        case 8:
+            return 'Neptune'
+    }
+}
+
+// 80. Transportation on vacation
+function rentalCarCost(d) {
+    let rentCostPerDay = 40
+    if(d >= 7) return rentCostPerDay * d - 50
+    if(d < 7 && d >=3) return rentCostPerDay * d - 20
+    if(d < 3) return rentCostPerDay * d
+}
