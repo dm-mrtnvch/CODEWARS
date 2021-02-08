@@ -599,3 +599,81 @@ function rentalCarCost(d) {
     if(d < 7 && d >=3) return rentCostPerDay * d - 20
     if(d < 3) return rentCostPerDay * d
 }
+
+// 81. Cat years, Dog years
+let humanYearsCatYearsDogYears = function(humanYears) {
+    let dogYears = 0
+    let catYears = 0
+    if(humanYears === 1){
+        dogYears = 15
+        catYears = 15
+    }
+    if(humanYears === 2){
+        dogYears = 24
+        catYears = 24
+    }
+    if(humanYears > 2){
+        dogYears = ((humanYears - 2) * 5) + 24
+        catYears = ((humanYears - 2) * 4) + 24
+    }
+    return [humanYears, catYears, dogYears]
+}
+
+// 82. No zeros for heros
+function noBoringZeros(n) {
+    let str = n.toString().split('')
+    for(i = str.length; i > 0; i--){
+        if(n === 0){
+            return 0
+        }
+        if(str[str.length - 1] === '0'){
+            str.pop()
+        } else {
+            return +str.join('')
+        }
+    }
+}
+
+// 83. Grasshopper - Personalized Message
+function greet (name, owner) {
+    if (name === owner) {
+        return 'Hello boss'
+    }
+    else
+        return 'Hello guest'
+}
+
+// 84. Parse nice int from char problem
+function getAge(inputString){
+    return Number(inputString[0]);
+}
+
+// 85. Sort and Star
+function twoSort(s) {
+    return s.sort()[0].split('').join('***');
+}
+
+// 86. Simple Fun #1: Seats in Theater
+function seatsInTheater(nCols, nRows, col, row) {
+    return (nCols-col+1) * (nRows - row)
+}
+
+// 87. Area or Perimeter
+const areaOrPerimeter = function(l , w) {
+    return l === w ? l * w : (l + w) * 2
+}
+
+// 88. All Star Code Challenge #18
+function strCount(str, letter){
+    return str.split('').filter(lttr => lttr === letter).length
+}
+
+// 89. To square(root) or not to square(root)
+function squareOrSquareRoot(array) {
+    return array.map(num => Math.sqrt(num) == Math.sqrt(num).toFixed(0) ? Math.sqrt(num) : Math.pow(num, 2))
+}
+
+// 90. Is the string uppercase?
+String.prototype.isUpperCase=function() {
+    return this == this.toUpperCase()
+}
