@@ -677,3 +677,95 @@ function squareOrSquareRoot(array) {
 String.prototype.isUpperCase=function() {
     return this == this.toUpperCase()
 }
+
+// 91. Unfinished Loop - Bug Fixing #1
+function createArray(number){
+    let newArray = [];
+
+    for(let counter = 1; counter <= number; counter++){
+        newArray.push(counter);
+    }
+    return newArray;
+}
+
+// 92. Generate range of integers
+function generateRange(min, max, step){
+    let arr = [];
+    for (let i=min; i<=max; i += step) {
+        arr.push(i);
+    }
+    return arr;
+}
+
+// 93. Exclamation marks series #11: Replace all vowel to exclamation mark in the sentence
+function replace(s){
+    let str ='';
+    let vowel = 'aeiouAEIOU';
+    for(let i = 0; i < s.length; i++){
+        if(vowel.includes(s[i])){
+            str += '!';
+        }else{
+            str += s[i];
+        }
+    }
+    return str;
+}
+
+// 94. Training JS #7: if..else and ternary operator
+function saleHotdogs(n){
+    if(n<5){
+        return n*100;
+    }else if(n<10){
+        return n*95;
+    }else{
+        return n*90;
+    }
+}
+
+// 95. Volume of a Cuboid
+class Kata {
+    static getVolumeOfCuboid(length, width, height) {
+        return length * width * height;
+    }
+}
+
+// 96. Check the exam
+function checkExam(array1, array2) {
+    let score = 0;
+    for(let i = 0; i < array1.length; i++) {
+        if(array1[i] === array2[i]){
+            score += 4;
+        }
+        else if(array2[i] === '') {
+            score += 0;
+        }
+        else {
+            score -= 1;
+        }
+    }
+    if(score < 0) {
+        score = 0;
+    }
+    return score;
+}
+
+// 97. My head is at the wrong end!
+function fixTheMeerkat(arr) {
+    return arr.reverse();
+}
+
+// 98. Keep up the hoop
+function hoopCount (n) {
+    return (n < 10) ? 'Keep at it until you get it' : 'Great, now move on to tricks';
+}
+
+// 99. Filter out the geese
+function gooseFilter (birds) {
+    let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+    return birds.filter(b => !geese.includes(b))
+};
+
+// 100. Opposites Attract
+function lovefunc(flower1, flower2){
+    return (flower1 + flower2) % 2 !== 0 ? true : false;
+}
