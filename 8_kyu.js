@@ -769,3 +769,76 @@ function gooseFilter (birds) {
 function lovefunc(flower1, flower2){
     return (flower1 + flower2) % 2 !== 0 ? true : false;
 }
+
+// 101. Get Nth Even Number
+function nthEven(n){
+    return n*2-2
+}
+
+// 102. Exclusive "or" (xor) Logical Operator
+function xor(a, b) {
+    return Boolean(a^b);
+}
+
+// 103. Thinkful - Logic Drills: Traffic light
+function updateLight(current) {
+    switch(current){
+        case 'green': return 'yellow'
+        case 'yellow': return 'red'
+        case 'red': return 'green'
+        default: 'ERROR!!!'
+    }
+}
+
+// 104. 5 without numbers !!
+function unusualFive() {
+    return 'fives'.length;
+}
+
+// 105. Watermelon
+function divide(weight) {
+    return weight % 2 === 0 && weight > 2;
+}
+
+// 106. Squash the bugs
+function findLongest(str) {
+
+    let spl = str.split(" ");
+    let longest = 0;
+
+    for (let i = 0; i < spl.length; i++){
+        if (spl[i].length > longest){
+            longest = spl[i].length;
+        }
+    }
+    return longest;
+};
+
+// 107. Quarter of the year
+const quarterOf = (month) => {
+    if(month<4)return 1;
+    if(month<7)return 2;
+    if(month<10)return 3;
+    return 4;
+
+}
+
+// 108. Student's Final Grade
+function finalGrade (exam, projects) {
+    if (exam > 90 || projects > 10) return 100;
+    else if (exam > 75 && projects >= 5) return 90;
+    else if (exam > 50 && projects >= 2) return 75;
+    else return 0;
+}
+
+// 109. Difference of Volumes of Cuboids
+function findDifference(a, b) {
+    let valueA = a.reduce((acc, num) => acc * num)
+    let valueB = b.reduce((acc, num) => acc * num)
+    return valueA > valueB ? valueA - valueB : valueB - valueA
+}
+
+// 110. noobCode 01: SUPERSIZE ME.... or rather, this integer!
+function superSize(num){
+    return Number(String(num).split('').sort((a, b) => b - a).join(''));
+}
