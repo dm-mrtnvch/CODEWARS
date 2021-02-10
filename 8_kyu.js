@@ -842,3 +842,63 @@ function findDifference(a, b) {
 function superSize(num){
     return Number(String(num).split('').sort((a, b) => b - a).join(''));
 }
+
+// 111. Training JS #1: create your first JS function and print "Helloworld!"
+function helloWorld(){
+    var str = "Hello World!";
+    console.log(str);
+}
+
+// 112. Hello, Name or World!
+function hello(name) {
+    return name
+        ? `Hello, ${name[0].toUpperCase() + name.slice(1).toLowerCase()}!`
+        : 'Hello, World!';
+}
+
+// 113. Grasshopper - Messi goals function
+function goals (laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+    return laLigaGoals + copaDelReyGoals + championsLeagueGoals;
+}
+
+// 114. Filling an array (part 1)
+const arr = N => {
+    let array = [];
+    for (i = 0; i < N; i++ ) {
+        array.push(i);
+    }
+    return array;
+}
+
+// 115. Dollars and Cents
+function formatMoney(amount){
+    return '$' + amount.toFixed(2);
+}
+
+// 116. Twice as old
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+    return Math.abs(dadYearsOld - (sonYearsOld*2));
+}
+
+// 117. Reversing Words in a String
+function reverse(string){
+    return string.split(' ').reverse().join(' ');
+}
+
+// 118. Is it even?
+function testEven(n) {
+    return n % 2 === 0;
+}
+
+// 119. Grasshopper - Terminal game combat function
+function combat(health, damage) {
+    return health - damage > 0 ? health - damage : 0;
+}
+
+// 120. Reversed sequence
+const reverseSeq = n => {
+    let arr = [];
+    for (let i=n; i>0; i--) {
+        arr.push(i);
+    } return arr;
+};
