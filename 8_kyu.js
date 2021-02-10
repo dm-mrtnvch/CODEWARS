@@ -902,3 +902,66 @@ const reverseSeq = n => {
         arr.push(i);
     } return arr;
 };
+
+// 121. get character from ASCII Value
+function getChar(c) {
+    return String.fromCharCode(c)
+}
+
+// 122. Capitalization and Mutability
+function capitalizeWord(word) {
+    return word[0].toUpperCase() + word.slice(1).toLowerCase();
+}
+
+// 123. Triple Trouble
+function tripleTrouble(one, two, three){
+    let str ='';
+    for (let i=0;i<one.length;i++){
+        str+= `${one[i]}${two[i]}${three[i]}`
+    }
+    return str;
+}
+
+// 124. Sum The Strings
+function sumStr(a,b) {
+    return (+a + +b).toString();
+}
+
+// 125. Powers of 2
+function powersOfTwo(n){
+    let arr = [1];
+    while(arr.length <= n){
+        arr.push(arr[arr.length-1] * 2);
+    }
+    return arr;
+}
+
+// 126. Grasshopper - If/else syntax debug
+function checkAlive(health) {
+    return health > 0;
+}
+
+// 127. Super Duper Easy
+function problem(x){
+    return typeof x=='number'?x*50+6:'Error'
+}
+
+// 128. Exclamation marks series #6: Remove n exclamation marks in the sentence from left to right
+function remove(s,n){
+    let input = s;
+    while (n) {
+        input = input.replace(/!/, "");
+        n-=1;
+    }
+    return input;
+}
+
+// 129. Hex to Decimal
+function hexToDec(hexString){
+    return parseInt(hexString, 16);
+}
+
+// 130. Grasshopper - Check for factor
+function checkForFactor (base, factor) {
+    return base % factor === 0;
+}
