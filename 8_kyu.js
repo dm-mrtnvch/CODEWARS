@@ -965,3 +965,66 @@ function hexToDec(hexString){
 function checkForFactor (base, factor) {
     return base % factor === 0;
 }
+
+// 131. Holiday VIII - Duty Free
+function dutyFree(normPrice, discount, hol){
+    return Math.trunc( hol / ( normPrice * ( discount / 100)));
+}
+
+// 132. Find Multiples of a Number
+function findMultiples(integer, limit) {
+    let arr = [];
+    for (let i = integer; i <= limit; i++) {
+        if (i % integer === 0) {
+            arr.push(i);
+        }
+    }
+    return arr;
+}
+
+// 133. Function 3 - multiplying two numbers
+function multiply( a, b ){
+    return a * b;
+}
+
+// 134. Exclamation marks series #1: Remove a exclamation mark from the end of string
+function remove(s){
+    if(s[s.length - 1] === '!') return s.split('').slice(0, s.split('').length -1).join('')
+    else return s
+}
+
+// 135. Convert to Binary
+function toBinary(n){
+    return parseInt(n.toString(2));
+}
+
+// 136. Bin to Decimal
+function binToDec(bin){
+    return parseInt(bin,2);
+}
+
+// 137. Is this my tail?
+function correctTail(body, tail) {
+    return body[body.length - 1] === tail;
+}
+
+// 138. Smallest unused ID
+function nextId(ids){
+    let i = 0;
+    while(true) {
+        if(!ids.includes(i)) return i;
+        i++
+    }
+}
+
+// 139. Grasshopper - Debug sayHello
+function sayHello(name) {
+    return `Hello, ${name}`
+}
+
+// 140. Surface Area and Volume of a Box
+function getSize(width, height, depth){
+    let surface = (width * height + width * depth + height * depth) * 2
+    let volume = width * height * depth
+    return [surface, volume]
+}
