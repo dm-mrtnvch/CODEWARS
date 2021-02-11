@@ -1028,3 +1028,85 @@ function getSize(width, height, depth){
     let volume = width * height * depth
     return [surface, volume]
 }
+
+// 141. Short Long Short
+function solution(a, b) {
+    return a.length < b.length ? a + b + a : b + a + b
+}
+
+// 142. 101 Dalmatians - squash the bugs, not the dogs!
+function howManyDalmatians(number) {
+    let dogs = ["Hardly any", "More than a handful!", "Woah that's a lot of dogs!", "101 DALMATIANS!!!"];
+    let respond = number <= 10 ? dogs[0] : number <= 50 ? dogs[1] : number == 101 ?  dogs[3] : dogs[2]
+    return respond
+}
+
+// 143. Training JS #2: Basic data types--Number
+let v1 = 50; v2 = 100, v3 = 150, v4 = 200, v5 = 2, v6 = 250;
+function equal1(){
+    let a = v1;
+    let b = v1;
+    return a + b;
+}
+function equal2(){
+    let a = v4;   //set number value to a
+    let b = v2;   //set number value to b
+    return a - b;
+}
+function equal3(){
+    let a = v1;   //set number value to a
+    let b = v5;   //set number value to b
+    return a * b;
+}
+function equal4(){
+    let a = v4;   //set number value to a
+    let b = v5;   //set number value to b
+    return a / b;
+}
+function equal5(){
+    let a = v6;   //set number value to a
+    let b = v3;   //set number value to b
+    return a % b;
+}
+
+// 144. How many stairs will Suzuki climb in 20 years?
+function stairsIn20(s){
+    let arr = [].concat(...s)
+    return (arr.reduce((current, item) => current + item)) * 20
+}
+
+// 145. Is it a palindrome?
+function isPalindrome(x) {
+    return x.toLowerCase() === x.toLowerCase().split('').reverse().join('');
+}
+
+// 146. Grasshopper - Terminal game move function
+function move (position, roll) {
+    return position + roll * 2
+}
+
+// 147. Palindrome Strings
+function isPalindrome(line) {
+    return String(line) === (String(line).split('').reverse().join(''));
+}
+
+// 148. Multiple of index
+function multipleOfIndex(array) {
+    return array.filter((value,index) => value % index === 0);
+}
+
+// 149. Regex count lowercase letters
+function lowercaseCount(str){
+    return str.match(/[a-z]/g) ? str.match(/[a-z]/g).length:0;
+}
+
+// 150. Remove duplicates from list
+function distinct(a) {
+    let arr = [];
+    for(let i = 0; i < a.length; i++){
+        if (!arr.includes(a[i])) {
+            arr.push(a[i]);
+        }
+    }
+    return arr;
+}
