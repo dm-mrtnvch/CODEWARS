@@ -1110,3 +1110,65 @@ function distinct(a) {
     }
     return arr;
 }
+
+// 151. String cleaning
+function stringClean(s){
+    return s.replace(/[1234567890]/g,'');
+}
+
+// 152. Find the Difference in Age between Oldest and Youngest Family Members
+function differenceInAges(ages){
+    return [Math.min(...ages),Math.max(...ages),Math.max(...ages)-Math.min(...ages)]
+}
+
+// 153. Reverse List Order
+function reverseList(list) {
+    return list.reverse();
+}
+
+// 164. Vowel remover
+function shortcut(string){
+    return string.replace(/[aeiou]/g,'')
+}
+
+// 165. Find the position!
+function position(letter){
+    return "Position of alphabet: " + ((letter.charCodeAt(0)-97) + 1);
+}
+
+// 166. What's the real floor?
+function getRealFloor(n) {
+    return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
+}
+
+// 167. Find Nearest square number
+function nearestSq(n){
+    return Math.pow(Math.round(Math.sqrt(n)), 2);
+}
+
+// 168. Area of a Square
+function squareArea(A){
+    return Number(((2 * A / 3.1416)**2).toFixed(2));
+}
+
+// 169. Sum of differences in array
+function sumOfDifferences(arr) {
+    const sortedArray = arr.sort((a, b) => b - a)
+    let total = 0
+    for(let i = 1; i < sortedArray.length; i++){
+        total += sortedArray[i - 1] - sortedArray[i]
+    }
+    return total
+}
+
+// 170. Tip Calculator
+function calculateTip(amount, rating) {
+    switch(rating.toLowerCase()){
+        case "terrible":return 0;
+        case "poor":return Math.ceil(amount * 0.05);
+        case "good":return Math.ceil(amount * 0.1);
+        case "great":return Math.ceil(amount * 0.15);
+        case "excellent":return Math.ceil(amount * 0.2);
+        default:return "Rating not recognised";
+    }
+}
