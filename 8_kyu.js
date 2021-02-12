@@ -1126,32 +1126,32 @@ function reverseList(list) {
     return list.reverse();
 }
 
-// 164. Vowel remover
+// 154. Vowel remover
 function shortcut(string){
     return string.replace(/[aeiou]/g,'')
 }
 
-// 165. Find the position!
+// 155. Find the position!
 function position(letter){
     return "Position of alphabet: " + ((letter.charCodeAt(0)-97) + 1);
 }
 
-// 166. What's the real floor?
+// 156. What's the real floor?
 function getRealFloor(n) {
     return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
 }
 
-// 167. Find Nearest square number
+// 157. Find Nearest square number
 function nearestSq(n){
     return Math.pow(Math.round(Math.sqrt(n)), 2);
 }
 
-// 168. Area of a Square
+// 158. Area of a Square
 function squareArea(A){
     return Number(((2 * A / 3.1416)**2).toFixed(2));
 }
 
-// 169. Sum of differences in array
+// 159. Sum of differences in array
 function sumOfDifferences(arr) {
     const sortedArray = arr.sort((a, b) => b - a)
     let total = 0
@@ -1161,7 +1161,7 @@ function sumOfDifferences(arr) {
     return total
 }
 
-// 170. Tip Calculator
+// 160. Tip Calculator
 function calculateTip(amount, rating) {
     switch(rating.toLowerCase()){
         case "terrible":return 0;
@@ -1171,4 +1171,100 @@ function calculateTip(amount, rating) {
         case "excellent":return Math.ceil(amount * 0.2);
         default:return "Rating not recognised";
     }
+}
+
+// 161. Regular Ball Super Ball
+let Ball = function(ballType = 'regular') {
+    this.ballType = ballType;
+};
+
+// 162. simple calculator
+function calculator(a,b,sign){
+    if(typeof a === 'number'&& typeof b === 'number'){
+        switch(sign){
+            case '+': return a+b;
+            case '-': return a-b;
+            case '*': return a*b;
+            case '/': return a/b;
+            default: return 'unknown value'
+        }
+    }
+    else return 'unknown value';
+}
+
+// 163. Function 2 - squaring an argument
+function square(num) {
+    return Math.pow(num,2);
+}
+
+// 164. Formatting decimal places #0
+function twoDecimalPlaces(n) {
+    return Number(n.toFixed(2));
+}
+
+// 165. Return the day
+function whatday(num) {
+    switch(num) {
+        case 1:
+            return "Sunday";
+        case 2:
+            return "Monday";
+        case 3:
+            return "Tuesday";
+        case 4:
+            return "Wednesday";
+        case 5:
+            return "Thursday";
+        case 6:
+            return "Friday";
+        case 7:
+            return "Saturday";
+        default:
+            return 'Wrong, please enter a number between 1 and 7';
+    }
+}
+
+// 166. The falling speed of petals
+function sakuraFall(v) {
+    return v < 1 ? 0 : 400 / v;
+}
+
+// 167. Merge two sorted arrays into one
+function mergeArrays(arr1, arr2) {
+    return [...new Set([...arr1, ...arr2])].sort((a, b)=> a - b)
+}
+
+// 168. Lario and Muigi Pipe Problem
+const pipeFix = numbers =>
+    Array.from(
+        {length : numbers[numbers.length - 1] - numbers[0] + 1},
+        (_, i) => numbers[0] + i
+    )
+
+// 169. Training JS #5: Basic data types--Object
+function animal(obj){
+    return `This ${obj.color} ${obj.name} has ${obj.legs} legs.`;
+}
+
+// 170. Training JS #4: Basic data types--Array
+function getLength(arr){
+    //return length of arr
+    return arr.length;
+}
+function getFirst(arr){
+    //return the first element of arr
+    return arr[0];
+}
+function getLast(arr){
+    //return the last element of arr
+    return arr[arr.length-1];
+}
+function pushElement(arr){
+    let el = 1;
+    arr.push(el);
+    return arr;
+}
+function popElement(arr){
+    arr.pop();
+    return arr;
 }
