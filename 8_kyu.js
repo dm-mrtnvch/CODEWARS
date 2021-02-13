@@ -1268,3 +1268,57 @@ function popElement(arr){
     arr.pop();
     return arr;
 }
+
+// 171. Exclamation marks series #2: Remove all exclamation marks from the end of sentence
+function remove(s){
+    return s.replace(/!*$/g,"");
+}
+
+// 172. IXME: Replace all dots
+let replaceDots = function(str) {
+    return str.replace(/\./g,'-');
+}
+
+// 173. Is it a number?
+function isDigit(s) {
+    return s==parseFloat(s);
+}
+
+// 174. Exclamation marks series #4: Remove all exclamation marks from sentence but ensure a exclamation mark at the end of string
+function remove(s){
+    return `${s.replace(/!+/g, '')}!`;
+}
+
+// 175. Multiplication table for number
+function multiTable(number) {
+    return [...new Array(10)].map((_, i) => `${i + 1} * ${number} = ${(i + 1) * number}`).join('\n');
+}
+
+// 176. Holiday VI - Shark Pontoon
+function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin){
+    if(dolphin){
+        sharkSpeed /= 2;
+    }
+    return pontoonDistance/youSpeed < sharkDistance/sharkSpeed ? "Alive!" : "Shark Bait!";
+}
+
+// 177. Grasshopper - Basic Function Fixer
+function addFive(num) {
+    let total = num + 5
+    return total;
+}
+
+// 178. Who is going to pay for the wall?
+function whoIsPaying(name) {
+    return name.length <= 2 ? [ name ] : [ name, name.slice(0, 2) ];
+}
+
+// 179. Determine offspring sex based on genes XX and XY chromosomes
+function chromosomeCheck(sperm) {
+    return `Congratulations! You're going to have a ${sperm === 'XX' ? 'daughter' : 'son'}.`;
+}
+
+// 180. The Wide-Mouthed frog!
+function mouthSize(animal) {
+    return animal.toLowerCase() === 'alligator' ? 'small' : 'wide';
+}
