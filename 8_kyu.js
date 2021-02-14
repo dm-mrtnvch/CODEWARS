@@ -1406,3 +1406,76 @@ function preFizz(n) {
 function nameShuffler(str){
     return str.split(' ').reverse().join(" ");
 }
+
+// 191. String Templates - Bug Fixing #5
+function buildString(...template){
+    return `I like ${template.join(', ')}!`;
+}
+
+// 192. Plural
+function plural(n) {
+    return (n !== 1);
+}
+
+// 193. Drink about
+function peopleWithAgeDrink(old){
+    if(old < 14){
+        return "drink toddy";
+    }
+    if(old < 18){
+        return "drink coke";
+    }
+    if(old < 21){
+        return "drink beer";
+    }
+    if(old >= 21){
+        return "drink whisky";
+    }
+}
+
+// 194. Man in the west
+function checkTheBucket(bucket){
+    return bucket.includes('gold');
+}
+
+// 195. repeatIt
+let repeatIt = function(str, n) {
+    return typeof(str) === "string" ? str.repeat(n) : "Not a string";
+}
+
+// 196. Find out whether the shape is a cube
+var cubeChecker = function(volume, side){
+    if (volume < 1 || side < 1) {
+        return false;
+    }
+    if (side ** 3 === volume) {
+        return true;
+    }
+    return false;
+}
+
+// 197. Grasshopper - Array Mean
+let findAverage = function (nums) {
+    return nums.reduce((acc, el) => acc + el, 0) / nums.length
+}
+
+
+// 198. What is between?
+function between(a, b) {
+    let arr =[];
+    while(a <= b){
+        arr.push(a);
+        a += 1;
+    }
+    return arr;
+}
+
+// 199. Printing Array elements with Comma delimiters
+function printArray(array){
+    return array.toString();
+}
+
+// 200. Welcome to the City
+function sayHello( name, city, state ) {
+    return `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`
+}
