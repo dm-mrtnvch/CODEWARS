@@ -1322,3 +1322,87 @@ function chromosomeCheck(sperm) {
 function mouthSize(animal) {
     return animal.toLowerCase() === 'alligator' ? 'small' : 'wide';
 }
+
+// 181. Enumerable Magic #3 - Does My List Include This?
+function include(arr, item){
+    return arr.includes(item);
+}
+
+// 182. Take the Derivative
+function derive(coefficient,exponent) {
+    return `${coefficient*exponent}x^${exponent-1}`
+}
+
+// 183. Grasshopper - Messi Goals
+let laLigaGoals = 43
+let championsLeagueGoals = 10
+let copaDelReyGoals = 5
+let totalGoals = laLigaGoals + championsLeagueGoals + copaDelReyGoals
+
+function messiTotalGoals(){
+    return totalGoals
+}
+
+// 184. Add Length
+function addLength(str){
+    return str.split(" ").map( word => `${word} ${word.length}`)
+}
+
+// 185. Enumerable Magic #25 - Take the First N Elements
+function take(arr, n) {
+    return arr.slice(0, n);
+}
+
+// 186. Training JS #10: loop statement --for
+function pickIt(arr) {
+    let odd = [], even = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            even.push(arr[i]);
+        } else {
+            odd.push(arr[i]);
+        }
+    }
+    return [odd, even];
+}
+
+
+// 187. Training JS #8: Conditional statement--switch
+function howManydays(month){
+    let days;
+    switch (month){
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            return days = 31
+
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            return days = 30
+
+        case 2:
+            return days = 28
+    }
+    return days;
+}
+
+// 188. No Loops 2 - You only need one
+function check(a, x) {
+    return a.includes(x);
+}
+
+// 189. Pre-FizzBuzz Workout #1
+function preFizz(n) {
+    return [...new Array(n)].map((_, i) => i+1)
+}
+
+// 190. Name Shuffler
+function nameShuffler(str){
+    return str.split(' ').reverse().join(" ");
+}
