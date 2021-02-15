@@ -1479,3 +1479,75 @@ function printArray(array){
 function sayHello( name, city, state ) {
     return `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`
 }
+
+
+// 201. Parse float
+function parseF(s) {
+    return isNaN(Number.parseFloat(s)) ? null : Number.parseFloat(s);
+}
+
+// 202. Remove First and Last Character Part Two
+function array(arr){
+    return arr.split(",").slice(1,-1).join(" ") || null;
+}
+
+// 203. Evil or Odious
+function evil(n) {
+    return n.toString(2).match(/1/g).length % 2 ? 'It\'s Odious!' : 'It\'s Evil!';
+}
+
+// 204. How old will I be in 2099?
+function  calculateAge(yearOfBirth, currentYear) {
+    if(currentYear > yearOfBirth){
+        return `You are ${currentYear - yearOfBirth} ${currentYear - yearOfBirth <= 1 ? 'year' : 'years'} old.`;
+    }
+    if(currentYear < yearOfBirth){
+        return `You will be born in ${yearOfBirth - currentYear} ${yearOfBirth - currentYear > 1 ? 'years' : 'year'}.`
+    }
+    if(currentYear === yearOfBirth){
+        return 'You were born this very year!'
+    }
+}
+
+
+// 205. Get number from string
+function getNumberFromString(s) {
+    return Number(s.split('').filter(el => parseInt(el) == el).join(''))
+}
+
+
+// 206. A Strange Trip to the Market
+function isLockNessMonster(s) {
+    return s.includes('treefiddy') || s.includes('tree fiddy') || s.includes(3.50)
+}
+
+// 207. Grasshopper - Function syntax debugging
+function main(verb, noun){
+    return (verb + noun).toString()
+}
+
+// 208. For UFC Fans (Total Beginners): Conor McGregor vs George Saint Pierre
+let quote = function(fighter) {
+    switch(fighter.toLowerCase()) {
+        case 'conor mcgregor': return "I'd like to take this chance to apologize.. To absolutely NOBODY!";
+        case 'george saint pierre': return "I am not impressed by your performance.";
+        default : 'Who are you?'
+    }
+};
+
+// 209. They say that only the name is long enough to attract attention. They also said that only a simple Kata will have someone to solve it. This is a sadly story #1: Are they opposite?
+function isOpposite(s1,s2){
+    let str = ''
+    if(s1.length !== s2.length || s1.length === 0 || s2.length === 0){
+        return false
+    }
+    for(i = 0; i < s1.length; i++){
+        s1[i] === s1[i].toLowerCase() ? str += s1[i].toUpperCase() : str += s1[i].toLowerCase()
+    }
+    return str === s2
+}
+
+// 210. How many lightsabers do you own?
+function howManyLightsabersDoYouOwn(name) {
+    return name === 'Zach' ? 18 : 0;
+}
