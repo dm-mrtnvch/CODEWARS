@@ -1551,3 +1551,82 @@ function isOpposite(s1,s2){
 function howManyLightsabersDoYouOwn(name) {
     return name === 'Zach' ? 18 : 0;
 }
+
+// 211. Find the Slope
+function slope([x1, y1, x2, y2]) {
+    const result = (y2 - y1) / (x2 - x1)
+    return isFinite(result) ? `${result}` : 'undefined'
+}
+
+// 212. Is your period late?
+function periodIsLate(last, today, cycleLength) {
+    return Math.floor(today.getTime() - last.getTime()) / 86400000 > cycleLength;
+}
+
+// 213. validate code with simple regex
+function validateCode (code) {
+    return /^[1-3]/g.test(code);
+}
+
+// 214. Number toString
+let number = 123;
+let a = number.toString();
+
+// 215. Find the Integral
+function integrate(coefficient, exponent) {
+    return `${coefficient/(exponent+1)}x^${exponent+1}`
+}
+
+// 216. Training JS #3: Basic data types--String
+var a1="A",a2="a",b1="B",b2="b",c1="C",c2="c",d1="D",d2="d",e1="E",e2="e",n1="N",n2="n"
+function Dad(){
+    //select some variable to combine "Dad"
+    return `${d1}${a2}${d2}`;
+}
+function Bee(){
+    //select some variable to combine "Bee"
+    return `${b1}${e2}${e2}`;
+}
+function banana(){
+    //select some variable to combine "banana"
+    return `${b2}${a2}${n2}${a2}${n2}${a2}`;
+}
+
+//answer some questions if you finished works above
+function answer1(){
+    //the answer should be "yes" or "no"
+    return "no";
+}
+function answer2(){
+    //the answer should be "yes" or "no"
+    return "no";
+}
+function answer3(){
+    //the answer should be "yes" or "no"
+    return "yes";
+}
+
+// 217. Price of Mangoes
+function mango(quantity, price){
+    return (quantity - Math.floor(quantity/3))*price;
+}
+
+// 218. Sum of Multiples
+function sumMul (n, m) {
+    if (n >= m) return 'INVALID';
+    let total = 0;
+    for (let i = n; i < m ; i += n) {
+        total += i;
+    }
+    return total;
+}
+
+// 219. Remove the time
+function shortenToDate(longDate) {
+    return longDate.split(",")[0];
+}
+
+// 220. Draw stairs
+function drawStairs(n) {
+    return [...Array(n)].map((_, i) => ' '.repeat(i) + 'I').join('\n');
+}
