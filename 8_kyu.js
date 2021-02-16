@@ -1630,3 +1630,75 @@ function shortenToDate(longDate) {
 function drawStairs(n) {
     return [...Array(n)].map((_, i) => ' '.repeat(i) + 'I').join('\n');
 }
+
+// 221. Object Oriented Piracy
+function Ship(draft,crew) {
+    this.draft = draft;
+    this.crew = crew;
+
+    this.isWorthIt = function(){
+        return 20 < this.draft - this.crew * 1.5;
+    }
+}
+
+
+// 222. Training JS #18: Methods of String object--concat() split() and its good friend join()
+function splitAndMerge(string, separator) {
+    return string.split(' ').map(word => word.split('').join(separator)).join(' ')
+}
+
+// 223. Heads and Legs
+const isPositive = animal => animal >= 0 && Number.isInteger(animal)
+
+function animals(heads, legs){
+    let cows = legs / 2 - heads
+    let chickens = heads - cows
+
+    return isPositive(chickens) && isPositive(cows)
+        ? [chickens, cows]
+        : 'No solutions'
+}
+
+// 224. Pillars
+function pillars(num_pill, dist, width) {
+    return (num_pill >= 2 ? ((num_pill-1)*dist*100) +((num_pill-2)*width) : 0);
+}
+
+// 225. Pirates!! Are the Cannons ready!??
+const cannonsReady = (gunners) => {
+    return Object.values(gunners).includes('nay')?'Shiver me timbers!':'Fire!';
+}
+
+// 226. Character Frequency
+function charFreq(message) {
+    return message.split('').reduce((frequence, character) => {
+        frequence[character] = frequence[character] ? frequence[character] + 1 : 1
+        return frequence
+    }, {})
+}
+
+// 227. Define a card suit
+function defineSuit(card) {
+    if (card.includes("♣")) return "clubs";
+    if (card.includes("♠")) return "spades";
+    if (card.includes("♦")) return "diamonds";
+    if (card.includes("♥")) return "hearts";
+}
+
+// 228. Calculate Price Excluding VAT
+function excludingVatPrice(price){
+    return price === null ? -1 : Number((price / 1.15).toFixed(2));
+}
+
+// 229. Power
+function numberToPower(number, power){
+    let pow = 1;
+    for(let i =0;i<power;i++){
+        pow*=number;}
+    return pow;
+}
+
+// 230. Compare within margin
+function closeCompare(a, b, margin){
+    return  (Math.abs(a-b) <= margin) ? 0 : Math.sign(a-b);
+}
