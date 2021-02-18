@@ -1780,3 +1780,54 @@ function joinStrings(string1, string2){
 function rainAmount(mm){"You need to give your plant 1mm of water"
     return mm >= 40 ? "Your plant has had more than enough water for today!" : `You need to give your plant ${40 - mm}mm of water`
 }
+
+// 241. Training JS #15: Methods of Number object--toFixed(), toExponential() and toPrecision()
+function howManySmaller(arr,n){
+    return arr.filter(num=>num.toFixed(2)<n).length;
+}
+
+// 242. Find the Remainder
+function remainder(a, b){
+    return (a > b) ? a % b : b % a;
+}
+
+// 243. Type of sum
+function typeOfSum(a, b) {
+    return typeof(a + b);
+}
+
+// 244. Age Range Compatibility Equation
+function datingRange(age){
+    return age <= 14 ? `${Math.floor(age - 0.1 * age)}-${Math.floor(age + 0.1 * age)}` : `${Math.floor(age / 2 + 7)}-${(age - 7) * 2}`
+}
+
+// 245. Count the number of cubes with paint on
+var countSquares = function(cuts){
+    return  cuts ? 6*cuts**2 + 2 : 1
+}
+
+// 246. BASIC: Making Six Toast.
+function sixToast(num) {
+    return Math.abs(num-6)
+}
+
+// 247. easy logs
+function logs(x , a, b){
+    return (Math.log(a*b) / Math.log(x));
+}
+
+// 248. Training JS #16: Methods of String object--slice(), substring() and substr()
+function cutIt(arr){
+    const minLength = Math.min(...arr.map(str => str.length));
+    return arr.map(str => str.slice(0, minLength));
+}
+
+// 249. Chuck Norris VII - True or False? (Beginner)
+function ifChuckSaysSo(){
+    return !true;
+}
+
+// 250. USD => CNY
+function usdcny(usd) {
+    return `${Number(usd * 6.75).toFixed(2)} Chinese Yuan`;
+}
