@@ -1831,3 +1831,79 @@ function ifChuckSaysSo(){
 function usdcny(usd) {
     return `${Number(usd * 6.75).toFixed(2)} Chinese Yuan`;
 }
+
+// 251. Switch/Case - Bug Fixing #6
+function evalObject(value){
+    switch(value.operation){
+        case'+': return value.a + value.b;
+        case'-': return value.a - value.b;
+        case'/': return value.a / value.b;
+        case'*': return value.a * value.b;
+        case'%': return value.a % value.b;
+        case'^': return Math.pow(value.a, value.b);
+    }
+}
+
+// 252. Grasshopper - Combine strings
+function combineNames(name, lastName) {
+    return `${name} ${lastName}`
+}
+
+// 253. Do you speak "English"?
+function spEng(sentence){
+    return sentence.toLowerCase().includes("english");
+}
+
+// 254. Incorrect division method
+const solve = (x, y) => {
+    return x / y
+}
+
+// 255. Training JS #12: loop statement --for..in and for..of
+function giveMeFive(obj){
+    //coding here
+    const arr = []
+    for (const key in obj){
+        if (obj.hasOwnProperty(key)) {
+            if (key.length === 5) arr.push(key)
+            if (obj[key].length === 5) arr.push (obj[key])
+        }
+    }
+    return arr
+}
+
+// 256. Simple Fun #352: Reagent Formula
+function isValid(formula){
+    const ruleOne = !(formula.includes(1) && formula.includes(2))
+    const ruleTwo = !(formula.includes(3) && formula.includes(4))
+    const ruleThree= formula.includes(5) === formula.includes(6)
+    const ruleFour = formula.includes(7) || formula.includes(8)
+
+    return ruleOne && ruleTwo && ruleThree && ruleFour
+}
+
+// 257. Be Concise I - The Ternary Operator
+function describeAge(a) {
+    return `You're a(n) ${a<13?'kid':a<18?'teenager':a<65?'adult':'elderly'}`;
+}
+
+// 258. Classy Classes
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    get info() {
+        return `${this.name}s age is ${this.age}`;
+    }
+}
+
+// 259. Simple Comparison?
+function add(a, b){
+    return a == b
+}
+
+// 260. Freudian translator
+function toFreud(string) {
+    return string ? string.split(' ').map(_ => 'sex').join(' ') : '';
+}
