@@ -1907,3 +1907,56 @@ function add(a, b){
 function toFreud(string) {
     return string ? string.split(' ').map(_ => 'sex').join(' ') : '';
 }
+
+// 261. Name on billboard
+function billboard(name, price = 30){
+    return name.split('').reduce(total => total + price, 0);
+}
+
+// 262. How much water do I need?
+function howMuchWater(water, load, clothes){
+    return clothes > 2 * load ? 'Too much clothes' : clothes < load ? 'Not enough clothes' : Number((water * 1.1 ** (clothes - load)).toFixed(2))
+}
+
+// 263. Improving Math.round(x)
+Math.roundTo = function (number, precision) {
+    return Number(number.toFixed(precision));
+}
+
+// 264. Enumerable Magic #1 - True for All?
+function all( arr, fun ){
+    return arr.filter(i => fun(i)).length === arr.length
+}
+
+// 265. Geometry Basics: Circle Circumference in 2D
+function circleCircumference(circle) {
+    return 2 * Math.PI * circle.radius;
+}
+
+// 266. Coding 3min : Jumping Dutch act
+function sc(floor) {
+    if(floor <= 1) return '';
+    if(floor <= 6) return `${'Aa~ '.repeat(floor - 1)}Pa! Aa!`;
+    if(floor > 6) return `${'Aa~ '.repeat(floor - 1)}Pa!`;
+}
+
+// 267. Training JS #32: methods of Math---round() ceil() and floor()
+function roundIt(n){
+    const splitedString = String(n).split('.')
+    if(splitedString[0].length > splitedString[1].length) return Math.floor(n)
+    if(splitedString[0].length < splitedString[1].length) return Math.ceil(n)
+    if(splitedString[0].length === splitedString[1].length) return Math.round(n)
+}
+
+// 268. UEFA EURO 2016
+function uefaEuro2016(teams, scores){
+    return (scores[0] !== scores[1]) ? `At match ${teams[0]} - ${teams[1]}, ${(scores[0]>scores[1]) ? teams[0]:teams[1]} won!`: `At match ${teams[0]} - ${teams[1]}, teams played draw.`;
+}
+
+// 269. Basic Training: Add item to an Array
+websites.push('codewars')
+
+// 270. For Twins: 2. Math operations
+function iceBrickVolume(radius, bottleLength, rimLength) {
+    return ((bottleLength-rimLength)*(radius*2)*radius);
+}
