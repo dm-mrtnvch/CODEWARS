@@ -2073,3 +2073,59 @@ function mystery() {
     let results = {sanity: 'Hello'};
     return results;
 }
+
+// 281. Unexpected parsing
+function getStatus(isBusy) {
+    return { status: isBusy ? "busy" : "available" }
+}
+
+// 282. Invalid Login - Bug Fixing #11
+function validate(username, password){
+    return new Database().login(username, encodeURI(password))
+}
+
+// 283. Blood-Alcohol Content
+function bloodAlcoholContent(drinks, weight, sex, time){
+    return Number((drinks.ounces * drinks.abv * 5.14/weight * (sex === 'male' ? 0.73 : 0.66)  - 0.015 * time).toFixed(4));
+}
+
+// 284. Pole Vault Starting Marks
+function startingMark(bodyHeight) {
+    const a = (10.67 - 9.45) / (1.83 - 1.52)
+    return Math.round((a * bodyHeight + 10.67 - a * 1.83) * 100) / 100
+}
+
+// 285. Push a hash/an object into array
+items = []
+items.push({a: "b", c: "d"})
+
+// 286. Add new item (collections are passed by reference)
+function addExtra( listOfNumbers ){
+    return [...listOfNumbers, 'new element']
+}
+
+
+// 287. Decibel Scale
+function dBScale(intensity) {
+    return 10*Math.log10(intensity/10**-12)
+}
+
+// 288. Training JS #34: methods of Math---pow() sqrt() and cbrt()
+function Int(n){
+    return Number.isInteger(Math.cbrt(n))
+}
+
+function cutCube(volume,n){
+    return Int(n) && Int(volume / n)
+}
+
+// 289. Online RPG: player to qualifying stage?
+function playerRankUp (points){
+    return points < 100 ? false : "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up.";
+}
+
+// 290. Is integer safe to use?
+function SafeInteger(n) {
+    return Number.isSafeInteger(n);
+}
+
