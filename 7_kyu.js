@@ -84,3 +84,32 @@ function getCount(str) {
     }
     return vowelsCount;
 }
+
+// 11. Exes and Ohs
+function XO(str) {
+    return (str.match(/x/gi) || []).length === (str.match(/o/gi) || []).length
+}
+
+// 12. Sum of two lowest positive integers
+function sumTwoSmallestNumbers(numbers) {
+    const sortedNumbers = [...numbers].sort((a, b) => a - b);
+    return sortedNumbers[0] + sortedNumbers[1];
+}
+
+// 13. Two to One
+function longest(s1, s2) {
+    const a = s1.split('')
+    const b = s2.split('')
+
+    return [...new Set([...a, ...b])].sort().join('')
+}
+
+// 14. Sum of odd numbers
+function rowSumOddNumbers(n) {
+    return n ** 3
+}
+
+// 15. Regex validate PIN code
+function validatePIN (pin) {
+    return /^(\d{4}|\d{6})$/g.test(pin);
+}
