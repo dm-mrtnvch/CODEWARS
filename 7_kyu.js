@@ -113,3 +113,37 @@ function rowSumOddNumbers(n) {
 function validatePIN (pin) {
     return /^(\d{4}|\d{6})$/g.test(pin);
 }
+
+// 16. List Filtering
+function filter_list(l) {
+    return l.filter((el) => typeof(el) == 'number')
+}
+
+// 17. Beginner Series #3 Sum of Numbers
+function getSum( a,b ) {
+    let min = Math.min(a, b),
+        max = Math.max(a, b);
+    return (max - min + 1) * (min + max) / 2;
+}
+
+// 18. Growth of a Population
+function nbYear(p0, percent, aug, p) {
+    let a = 0
+    for (a; p0 < p; a++) p0 = p0 * (1 + percent / 100) + aug
+    return a
+}
+
+// 19. Credit Card Mask
+function maskify(cc) {
+    return cc.replace(/.(?=.{4})/g, "#");
+}
+
+// 20. Complementary DNA
+function DNAStrand(dna){
+    const pairs = { A: 'T', T: 'A', C: 'G', G: 'C' }
+
+    return dna
+        .split('')
+        .map(string => pairs[string])
+        .join('')
+}
