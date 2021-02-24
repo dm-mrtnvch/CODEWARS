@@ -147,3 +147,40 @@ function DNAStrand(dna){
         .map(string => pairs[string])
         .join('')
 }
+
+// 21. Ones and Zeros
+const binaryArrayToNumber = arr => {
+    return parseInt(arr.join(""), 2)
+};
+
+// 22. Friend or Foe?
+function friend(friends){
+    return friends.filter(friend=>friend.length===4);
+}
+
+// 23. Printer Errors
+function printerError(s) {
+    return `${s.replace(/[a-m]/gi,'').length}/${s.length}`;
+}
+
+// 24. Categorize New Member
+function openOrSenior(data){
+    return data.map(member => {
+        const age = member[0];
+        const handicap = member[1];
+        return (age >= 55 && handicap > 7) ?
+            'Senior' : 'Open';
+    });
+}
+
+// 25. Find the next perfect square!
+const isSquare = n => Number.isInteger(Math.sqrt(n))
+
+const findNextSquare = sq => {
+    if (!isSquare(sq)) return -1
+
+    let number = sq + 1
+    while (!isSquare(number)) number++
+
+    return number
+}
