@@ -184,3 +184,34 @@ const findNextSquare = sq => {
 
     return number
 }
+
+// 26. Reverse words
+function reverseWords(str) {
+    return str.split("").reverse().join("").split(" ").reverse().join(" ");
+}
+
+// 27. Is this a triangle?
+function isTriangle(a,b,c) {
+    let max = Math.max(a, b, c);
+    let sum = a + b + c;
+    return sum - max > max;
+}
+
+// 28. Number of People in the Bus
+let number = function(busStops){
+    return busStops.reduce((rem, [on, off]) => rem + on - off, 0);
+}
+
+// 29. Sum of the first nth term of Series
+function SeriesSum(n){
+    return Array(n)
+        .fill(0)
+        .map((_, i) => 3 * i + 1)
+        .reduce((total, next) => total + 1 / next, 0)
+        .toFixed(2)
+}
+
+// 30. Odd or Even?
+function oddOrEven(array) {
+    return array.reduce((start, next)=> start + next, 0) % 2 === 0 ? `${'even'}` : `${'odd'}`
+}
