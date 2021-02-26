@@ -215,3 +215,36 @@ function SeriesSum(n){
 function oddOrEven(array) {
     return array.reduce((start, next)=> start + next, 0) % 2 === 0 ? `${'even'}` : `${'odd'}`
 }
+
+// 31. String ends with?
+function solution(str, ending){
+    return str.endsWith(ending);
+}
+
+// 32. Money, Money, Money
+function calculateYears(principal, interest, tax, desired) {
+    let year = 0
+    while (principal < desired && ++year)
+        principal += principal * interest - principal * interest * tax
+    return year
+}
+
+// 33. Two fighters, one winner.
+function declareWinner(fighter1, fighter2, firstAttacker) {
+    const firstFighter = Math.ceil(fighter1.health / fighter2.damagePerAttack)
+    const secondFighter = Math.ceil(fighter2.health / fighter1.damagePerAttack)
+    return firstFighter < secondFighter ? fighter2.name : (secondFighter < firstFighter ? fighter1.name : firstAttacker)
+}
+
+// 34. Don't give me five!
+function dontGiveMeFive(start, end){
+    return Array
+        .from(Array(end - start + 1), (_, i) => i + start)
+        .filter(num => !num.toString().includes('5'))
+        .length
+}
+
+// 35. Find the stray number
+function stray(numbers) {
+    return numbers.find(number => numbers.indexOf(number) === numbers.lastIndexOf(number));
+}
