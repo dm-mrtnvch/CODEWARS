@@ -281,3 +281,53 @@ function mxdiflg(a1, a2) {
         Math.max(...length2) - Math.min(...length1)
     )
 }
+
+// 41. Sort array by string length
+function sortByLength (array) {
+    return array.sort((a,b) => a.length - b.length);
+};
+
+// 42. Make a function that does arithmetic!
+function arithmetic(a, b, operator){
+    switch(operator) {
+        case 'add':
+            return a + b;
+        case 'subtract':
+            return a - b;
+        case 'multiply':
+            return a * b;
+        case 'divide':
+            return a / b;
+    }
+}
+
+// 43. Sum of all the multiples of 3 or 5
+function findSum(n) {
+    let result = 0;
+    for (let i = 0; i <= n; i += 1) {
+        if (i % 3 ===0 || i % 5 === 0) result += i
+    }
+    return result
+}
+
+// 44. Count the Digit
+function nbDig(n, d) {
+    let result = 0;
+    for (let i = 0; i <= n; i++) {
+        let square =(i * i + '').split('')
+        square.forEach((s) => (s == d) ? result++ : null)
+    }
+    return result
+}
+
+// 45. Largest 5 digit number in a series
+function solution(digits){
+    let result = 0;
+    for (let i = 0; i < digits.length ; i++){
+        let number = digits.substr(i, 5);
+        if (Number(number) > result) {
+            result = Number(number);
+        }
+    }
+    return result;
+}
