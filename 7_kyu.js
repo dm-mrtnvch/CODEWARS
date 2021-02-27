@@ -248,3 +248,36 @@ function dontGiveMeFive(start, end){
 function stray(numbers) {
     return numbers.find(number => numbers.indexOf(number) === numbers.lastIndexOf(number));
 }
+
+// 36. The highest profit wins!
+function minMax(arr){
+    return [Math.min(...arr), Math.max(...arr)];
+}
+
+// 37. Breaking chocolate problem
+function breakChocolate(n,m) {
+    return n && m ? n*m -1 : 0
+}
+
+// 38. Testing 1-2-3
+let number = function(array){
+    return array.map((char, index) => `${index + 1}: ${char}`)
+}
+
+// 39. Sum of a sequence
+const sequenceSum = (begin, end, step) => {
+    return begin > end ? 0 : begin + sequenceSum(begin + step, end, step)
+};
+
+// 40 Maximum Length Difference
+function mxdiflg(a1, a2) {
+    if (a1.length === 0 || a2.length === 0) return -1
+
+    const length1 = a1.map(string => string.length)
+    const length2 = a2.map(string => string.length)
+
+    return Math.max(
+        Math.max(...length1) - Math.min(...length2),
+        Math.max(...length2) - Math.min(...length1)
+    )
+}
