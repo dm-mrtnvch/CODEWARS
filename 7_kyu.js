@@ -331,3 +331,29 @@ function solution(digits){
     }
     return result;
 }
+
+// 46.Find the middle element
+let gimme = function (inputArray) {
+    return [...inputArray].indexOf(inputArray.sort((a,b)=>a-b)[1])
+};
+
+// 47. Alternate capitalization
+function capitalize(s){
+    return [0, 1].map(bool => [...s].map((char, i) => (i % 2 === bool ? char.toUpperCase() : char)).join(''));
+};
+
+// 48. Form The Minimum
+function minValue(values){
+    return +(Array.from(new Set(values)).sort((a,b) => a - b)).join('');
+}
+
+// 49. Factorial
+function factorial(n){
+    if (n < 0 || n > 12) throw new RangeError('Range must be between 0 and 12')
+    return n>1?n*factorial(n-1):1;
+}
+
+// 50. Maximum Multiple
+function maxMultiple(divisor, bound){
+    return bound-bound%divisor
+}
