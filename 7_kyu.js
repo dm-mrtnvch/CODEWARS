@@ -357,3 +357,40 @@ function factorial(n){
 function maxMultiple(divisor, bound){
     return bound-bound%divisor
 }
+
+// 51. Round up to the next multiple of 5
+function roundToNext5(n){
+    return Math.ceil(n/5)*5;
+}
+
+// 52. Count the divisors of a number
+function getDivisorsCnt(n){
+    let div = 0;
+    for (let i = 0; i <= n; i++) {
+        if (n % i === 0) {
+            div += 1;
+        }
+    }
+    return div;
+}
+
+// 53. Simple Fun #176: Reverse Letter
+function reverseLetter(str) {
+    return str.replace(/[^a-z]/gi, '').split('').reverse().join('');
+}
+
+// 54. The Coupon Code
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+    return enteredCode === correctCode && Date.parse(expirationDate) >= Date.parse(currentDate)
+}
+
+// 55. Moves in squared strings (I)
+function vertMirror(strng) {
+    return strng.map(s => [...s].reverse().join(''));
+}
+function horMirror(strng) {
+    return strng.reverse()
+}
+function oper(fct, s) {
+    return fct(s.split("\n")).join("\n");
+}
