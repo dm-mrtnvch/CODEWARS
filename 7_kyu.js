@@ -394,3 +394,40 @@ function horMirror(strng) {
 function oper(fct, s) {
     return fct(s.split("\n")).join("\n");
 }
+
+// 56. Find the capitals
+let capitals = function (word) {
+    let numbers = word.split('')
+    let array = []
+    for(let i = 0; i < word.length; i++){
+        if(numbers[i] === numbers[i].toUpperCase()){
+            array.push(i)
+        }
+    }
+    return array
+};
+
+
+// 57. Remove duplicate words
+function removeDuplicateWords (s) {
+    return [...new Set(s.split(' '))].join(' ');
+}
+
+//58. Anagram Detection
+let isAnagram = function(test, original) {
+    let check = (string) => string.toLowerCase().split('').sort().join('')
+    return check(original) ===  check(test)
+};
+
+// 59. Summing a number's digits
+function sumDigits(number) {
+    return Math.abs(number)
+        .toString()
+        .split('')
+        .reduce((total, number) => total + Number(number), 0)
+}
+
+// 60. Fix string case
+function solve(s){
+    return s.replace(/[a-z]/g,'').length>s.length / 2 ? s.toUpperCase() : s.toLowerCase()
+}
