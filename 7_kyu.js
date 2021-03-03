@@ -431,3 +431,38 @@ function sumDigits(number) {
 function solve(s){
     return s.replace(/[a-z]/g,'').length>s.length / 2 ? s.toUpperCase() : s.toLowerCase()
 }
+
+// 61. Power of two
+function isPowerOfTwo(n){
+    return Number.isInteger(Math.log2(n));
+}
+
+// 62. Remove anchor from URL
+function removeUrlAnchor(url){
+    return url.replace(/#.*/g, '')
+}
+
+// 63. Two Oldest Ages
+function twoOldestAges(ages){
+    return ages.sort((a,b)=>a-b).slice(-2);
+}
+
+// 64. Palindrome chain length
+let palindromeChainLength  = function(n) {
+    let a = parseInt(('' + n).split('').reverse().join(''));
+    if(n !== a){
+        return 1 + palindromeChainLength (n + a);
+    }
+    return 0;
+};
+
+// 65. Most digits
+function findLongest(array){
+    let maxNumber = 0
+    for(let i = 0; i < array.length; i++){
+        if(String(array[i]).length > String(maxNumber).length){
+            maxNumber = array[i]
+        }
+    }
+    return maxNumber
+}
