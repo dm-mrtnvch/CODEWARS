@@ -466,3 +466,43 @@ function findLongest(array){
     }
     return maxNumber
 }
+
+// 66. Going to the cinema
+function movie(card, ticket, perc) {
+    let total = 0
+    let price = 0
+    let tckt = ticket
+    let crd = card
+
+    while (price <= Math.ceil(crd)) {
+        crd += (tckt * perc);
+        tckt *= perc;
+        price += ticket;
+        total += 1;
+    }
+    return total;
+};
+
+// 67. Flatten and sort an array
+"use strict";
+function flattenAndSort(array) {
+    return [].concat(...array).sort((a,b) => a - b);
+}
+
+// 68. Sort Out The Men From Boys
+function menFromBoys(arr){
+    return [...new Set(arr.filter(v => v % 2 === 0)
+        .sort((a,b)=> a - b)
+        .concat(arr.filter(v => v % 2 !== 0)
+            .sort((a,b)=> b -a )))]
+}
+
+// 69. Predict your age!
+function predictAge(...ages){
+    return Math.hypot(...ages) / 2 | 0;
+}
+
+// 70. Love vs friendship
+function wordsToMarks(string){
+    return [...string].reduce((total, valueOfEachLetter) => total += valueOfEachLetter.charCodeAt() - 96, 0)
+}
