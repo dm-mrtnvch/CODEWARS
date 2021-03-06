@@ -506,3 +506,35 @@ function predictAge(...ages){
 function wordsToMarks(string){
     return [...string].reduce((total, valueOfEachLetter) => total += valueOfEachLetter.charCodeAt() - 96, 0)
 }
+
+// 71. Are the numbers in order?
+function inAscOrder(arr) {
+    return arr.every((_, i) => i === 0 || arr[i] > arr[i - 1]);
+}
+
+// 72. Deodorant Evaporator
+function evaporator(content, evap_per_day, threshold){
+    let result = 0;
+    var percentage = 100;
+    while (percentage > threshold) {
+        percentage = percentage - percentage * (evap_per_day / 100);
+        result += 1;
+    }
+    return result;
+}
+
+// 73. Alphabetical Addition
+function addLetters(...letters) {
+    return String.fromCharCode((letters.reduce((sum, letter) => sum + letter.charCodeAt() - 96, 0) % 26 || 26) + 96)
+}
+
+// 74. Sorted? yes? no? how?
+function isSortedAndHow(array) {
+    return array.every((a, b)=> b == 0 || array[b] >= array[b - 1]) ? 'yes, ascending' :
+        array.every((a, b)=> b == 0 ||array[b] <= array[b - 1]) ? 'yes, descending' : 'no'
+}
+
+// 75. Sum of Minimums!
+function sumOfMinimums(arr) {
+    return arr.reduce((a, b) => a + Math.min(...b), 0);
+}
