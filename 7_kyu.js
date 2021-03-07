@@ -538,3 +538,40 @@ function isSortedAndHow(array) {
 function sumOfMinimums(arr) {
     return arr.reduce((a, b) => a + Math.min(...b), 0);
 }
+
+// 76. Minimize Sum Of Array (Array Series #1)
+function minSum(arr) {
+    const sortedNumber = arr.sort((a, b) => a - b)
+    let total = 0
+    for(let i = 0; i < arr.length / 2; i ++) {
+        total += sortedNumber[i] * sortedNumber[sortedNumber.length - 1 - i]
+    }
+    return total
+}
+
+// 77. Ordered Count of Characters
+let orderedCount = function (text) {
+    return [...new Set(text)].map(letter => [letter, text.split(letter).length - 1])
+}
+
+// 78. Speed Control
+function gps(s, x) {
+    if (x.length<=1){
+        return 0;
+    }
+    let output = [];
+    for (let i = 0; i<x.length-1; i++){
+        output.push((x[i+1]-x[i])*3600/s);
+    }
+    return Math.max(...output);
+}
+
+// 79. Row Weights
+function rowWeights(array) {
+    return array.reduce((a, b, i) => (a[i%2] += b, a), [0, 0]);
+}
+
+// 80. Form The Largest
+function maxNumber(n){
+    return Number(String(n).split('').sort((a,b) => b - a).join(''))
+}
