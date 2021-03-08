@@ -575,3 +575,31 @@ function rowWeights(array) {
 function maxNumber(n){
     return Number(String(n).split('').sort((a,b) => b - a).join(''))
 }
+
+// 81. All Inclusive?
+function containAllRots(strng, arr) {
+    for (let i = 0; i < strng.length; i++)
+        if (arr.indexOf(strng.slice(i) + strng.slice(0, i)) === -1)
+            return false;
+    return true;
+}
+
+// 82. Reverse a Number
+function reverseNumber(n) {
+    return (n>0?1:-1)*Math.abs(n).toString().split('').reverse().join('');
+}
+
+// 83. Thinkful - String Drills: Repeater
+function repeater(string, n){
+    return string.repeat(n)
+}
+
+// 84. Automorphic Number (Special Numbers Series #6)
+function automorphic(n){
+    return (String(n) === String(Math.pow(n, 2)).slice(-String(n).length)) ? "Automorphic" : "Not!!";
+}
+
+// 85. Small enough? - Beginner
+function smallEnough(a, limit){
+    return a.every(num => num <= limit)
+}
