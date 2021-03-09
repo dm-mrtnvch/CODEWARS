@@ -603,3 +603,45 @@ function automorphic(n){
 function smallEnough(a, limit){
     return a.every(num => num <= limit)
 }
+
+// 86. Fizz Buzz
+function fizzbuzz(n) {
+    let i = 1, arr = []
+    while(i <= n) {
+        let f = (i % 3 == 0)
+        let b = (i % 5 == 0)
+        if(f || b) {
+            arr.push((f ? "Fizz" : "") + (b ? "Buzz" : ""))
+        } else {
+            arr.push(i)
+        }
+        i++
+    }
+    return arr
+}
+
+// 87. Sum of Odd Cubed Numbers
+function cubeOdd(arr) {
+    const isNumber = arr.every(el => typeof el === 'number')
+    if(!isNumber) return undefined
+
+    return arr
+        .map(num => num ** 3)
+        .filter(num => num % 2 !== 0)
+        .reduce((sum, value) => sum + value, 0)
+}
+
+// 88. Simple remove duplicates
+function solve(arr){
+    return [...new Set([...arr].reverse())].reverse()
+}
+
+// 89. Sort Numbers
+function solution(nums){
+    return (nums||[]).sort((a, b) => a - b);
+}
+
+// 90. My Languages
+function myLanguages(results) {
+    return Object.keys(results).filter(i => results[i] >= 60).sort((a,b)=>results[b]-results[a])
+}
