@@ -645,3 +645,46 @@ function solution(nums){
 function myLanguages(results) {
     return Object.keys(results).filter(i => results[i] >= 60).sort((a,b)=>results[b]-results[a])
 }
+
+// 91. Drying Potatoes
+function potatoes(p0, w0, p1) {
+    return Math.floor(w0 * (100 - p0) / (100 - p1))
+}
+
+// 92. Find the vowels
+function vowelIndices(word){
+    let arr=[]
+    let splitedWords = word.split('');
+    for (let i = 0; i < word.length; i++){
+        if(/[aeuoiy]/gi.test(splitedWords[i])) {
+            arr.push(i+1)
+        }
+    }
+    return arr
+}
+
+// 93. Complete The Pattern #1
+function pattern(n){
+    let str="";
+    for (let i = 1; i <= n; i++){
+        for (let j=0; j < i ; j++){
+            str += i;
+        }
+        if (i !== n)
+            str += "\n";
+    }
+    return str;
+}
+
+// 94. Compare Strings by Sum of Chars
+function compare(s1, s2) {
+    if (/^\D+$/gi.test(s1) && /^\D+$/gi.test(s2))
+        return s1.split('').map(n => n.toUpperCase().charCodeAt()).reduce((a, b) => a + b) ===
+            s2.split('').map(n => n.toUpperCase().charCodeAt()).reduce((a, b) => a + b);
+    return true;
+}
+
+// 95. Number of Decimal Digits
+function digits(n) {
+    return String(n).length
+}
