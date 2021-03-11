@@ -688,3 +688,38 @@ function compare(s1, s2) {
 function digits(n) {
     return String(n).length
 }
+
+// 96. Digital cypher
+function encode(str,  n) {
+    return Array.from(str, (c, i) => c.charCodeAt(0) - 96 + Number(String(n)[i % String(n).length]));
+}
+
+// 97. Sum of array singles
+function repeats(arr){
+    return  arr
+        .filter((num, i, arr) =>
+            arr.indexOf(num) === arr.lastIndexOf(num))
+        .reduce((a, b) => a + b, 0)
+}
+
+// 98. Halving Sum
+function halvingSum(n) {
+    let sum = 0
+    while (n>0){
+        sum += n
+        n = Math.floor(n/2)
+    }
+    return sum
+}
+
+// 99. Factorial
+function factorial(n) {
+    if(n < 0 || n > 12) { throw RangeError;}
+    for(var temp = 1; n > 1; n--) temp *= n;
+    return temp;
+}
+
+// 100. Array element parity
+function solve(arr){
+    return arr.filter(value => arr.indexOf(-value) === -1)[0]
+};
