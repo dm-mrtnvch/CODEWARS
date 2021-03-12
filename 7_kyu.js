@@ -723,3 +723,37 @@ function factorial(n) {
 function solve(arr){
     return arr.filter(value => arr.indexOf(-value) === -1)[0]
 };
+
+// 101. Disarium Number (Special Numbers Series #3)
+function disariumNumber(n){
+    let string = String(n).split('')
+    let total = []
+    for(let i = 0; i < string.length; i++){
+        total.push(Math.pow(string[i], i+ 1))
+    }
+    return total.reduce((a, b) => a + (b * 1), 0) === n ? 'Disarium !!' : 'Not !!'
+}
+
+// 102. No oddities here
+function noOdds(values) {
+    return values.filter(value => value % 2 === 0);
+}
+
+// 103. Functional Addition
+function add(n) {
+    return function(a){
+        return n + a;
+    }
+}
+
+// 104. Sum of Cubes
+function sumCubes(n) {
+    return (n * (n + 1) / 2) ** 2;
+}
+
+// 105. Currying functions: multiply all elements in an array
+function multiplyAll(array){
+    return function multiply_all(integer){
+        return array.map(el => el * integer)
+    }
+}
