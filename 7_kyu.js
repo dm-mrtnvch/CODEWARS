@@ -757,3 +757,35 @@ function multiplyAll(array){
         return array.map(el => el * integer)
     }
 }
+
+// 106. Nth Smallest Element (Array Series #4)
+function nthSmallest(arr, pos){
+    return arr.sort((a,b)=>a-b)[pos-1]
+}
+
+// 107. Unique string characters
+function solve(a,b){
+    let firstString = a.split('').filter(v => !b.split('').includes(v)).join('')
+    let secondString = b.split('').filter(v => !a.split('').includes(v)).join('')
+    return firstString + secondString
+}
+
+// 108. Simple beads count
+function countRedBeads(n) {
+    if(n<2) return 0;
+    return (n-1) * 2;
+}
+
+// 109. Return the first M multiples of N
+function multiples(m, n){
+    let array = []
+    for (let i = 1; i <= m; i++){
+        array.push(n*i)
+    }
+    return array
+}
+
+// 110. Longest vowel chain
+function solve(s){
+    return Math.max(...s.match(/[aeiou]+/g).map(x => x.length));
+}
