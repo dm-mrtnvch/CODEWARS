@@ -789,3 +789,43 @@ function multiples(m, n){
 function solve(s){
     return Math.max(...s.match(/[aeiou]+/g).map(x => x.length));
 }
+
+// 111. Simple Fun #152: Invite More Women?
+function inviteMoreWomen(L) {
+    return L.reduce((a,b)=>a+b,0)>0
+}
+
+// 112. Product Of Maximums Of Array (Array Series #2)
+function maxProduct(numbers, size){
+    return numbers.sort((a,b)=>a-b).slice(numbers.length-size).reduce((a,b)=>a*b,1)
+}
+
+// 113. Even numbers in an array
+function evenNumbers(array, number) {
+    const result = []
+    array.map(eachNumber => {
+        if(eachNumber % 2 === 0){
+            result.push(eachNumber)
+        }
+    })
+    return result.splice(-number)
+}
+
+// 114. Indexed capitalization
+function capitalize(s,arr){
+    const string = s.split('')
+    arr.forEach((index) => {
+        if(string[index] !== undefined){
+            string[index] = string[index].toUpperCase()
+        }
+    })
+    return string.join('')
+};
+
+// 115. Maximum Triplet Sum (Array Series #7)
+function maxTriSum(numbers){
+    return [...new Set(numbers)]
+        .sort((a, b) => a - b)
+        .slice(-3)
+        .reduce((acc, el) => acc + el, 0)
+}
