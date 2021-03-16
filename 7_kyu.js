@@ -829,3 +829,32 @@ function maxTriSum(numbers){
         .slice(-3)
         .reduce((acc, el) => acc + el, 0)
 }
+
+// 116. Leap Years
+function isLeapYear(year) {
+    return (year % 100 !== 0 && year % 4 === 0) || year % 400 === 0;
+}
+
+// 117. Difference Of Squares
+function differenceOfSquares(n){
+    return (n * (n * n - 1) * (3 * n + 2)) / 12;
+}
+
+// 118. Simple string characters
+function solve(s){
+    return [(s.match(/[A-Z]/g)||[]).length, (s.match(/[a-z]/g)||[]).length, (s.match(/\d/g)||[]).length, (s.match(/\W/g)||[]).length]
+}
+
+// 119. Bumps in the Road
+function bump(x) {
+    return x.split('n').length>16 ? "Car Dead" : "Woohoo!";
+}
+
+// 120. Alternate case
+function alternateCase(s) {
+    const isLowerCase = char => char === char.toLowerCase()
+    return s
+        .split('')
+        .map(char => (isLowerCase(char) ? char.toUpperCase() : char.toLowerCase()))
+        .join('')
+}
