@@ -858,3 +858,32 @@ function alternateCase(s) {
         .map(char => (isLowerCase(char) ? char.toUpperCase() : char.toLowerCase()))
         .join('')
 }
+
+// 121. Find all occurrences of an element in an array
+const findAll = (array, n) => {
+    return array.reduce((acc, number, index) => (number === n ? [...acc, index] : acc), [])
+}
+
+// 122. Divide and Conquer
+function divCon(x){
+    return x.reduce((s, v) => s + (v === +v ? v : -v), 0)
+}
+
+// 123. Happy Birthday, Darling!
+function womensAge(n) {
+    return `${n}? That's just ${20+n%2}, in base ${Math.floor(n/2)}!`
+}
+
+// 124. Count all the sheep on farm in the heights of New Zealand
+function lostSheep(friday,saturday,total) {
+    return total - [...friday, ...saturday].reduce((sum, sheeps) => sum + sheeps, 0)
+}
+
+// 125. List to Array
+function listToArray(list) {
+    let array = [];
+    for (let node = list; node; node = node.next) {
+        array.push(node.value);
+    }
+    return array;
+}
