@@ -887,3 +887,36 @@ function listToArray(list) {
     }
     return array;
 }
+
+// 126. Special Number (Special Numbers Series #5)
+function specialNumber(n){
+    return /[6-9]/.test(n)?"NOT!!":"Special!!"
+}
+
+// 127. Word values
+function wordValue(a) {
+    return a.map(value => value.replace(/\ /gi,'').split('').map(value => value.charCodeAt(0)-96)
+        .reduce((a, b)=> a + b, 0)).map((value, i)=> value * (i + 1))
+}
+
+// 128. Simple string reversal
+function solve(str){
+    const arr = [...str.split(` `).join(``)];
+    return str.replace(/\S/g, a => arr.pop());
+}
+
+// 129. Tidy Number (Special Numbers Series #9)
+function tidyNumber(n){
+    const arr=n.toString().split('')
+    for (let i=0;i<arr.length-1;i++)
+    {
+        if (arr[i]<=arr[i+1]){continue}
+        else { return false}
+    }
+    return true
+}
+
+// 130. Numbers in strings
+function solve(s){
+    return Math.max(...s.match(/\d+/g));
+};
