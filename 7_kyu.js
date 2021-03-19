@@ -920,3 +920,70 @@ function tidyNumber(n){
 function solve(s){
     return Math.max(...s.match(/\d+/g));
 };
+
+// 131. SevenAte9
+function sevenAte9(str){
+    return str.replace(/79(?=7)/g, '7');
+}
+
+// 132. Greatest common divisor
+function mygcd(x,y){
+    return y === 0 ? x : mygcd(y, x % y);
+}
+
+// 133. ToLeetSpeak
+function toLeetSpeak(str) {
+    let alphabet = {
+        A : '@',
+        B : '8',
+        C : '(',
+        D : 'D',
+        E : '3',
+        F : 'F',
+        G : '6',
+        H : '#',
+        I : '!',
+        J : 'J',
+        K : 'K',
+        L : '1',
+        M : 'M',
+        N : 'N',
+        O : '0',
+        P : 'P',
+        Q : 'Q',
+        R : 'R',
+        S : '$',
+        T : '7',
+        U : 'U',
+        V : 'V',
+        W : 'W',
+        X : 'X',
+        Y : 'Y',
+        Z : '2'
+    }
+    return str.replace(/[A-Z]/g, char => alphabet[char])
+}
+
+// 134. Inspiring Strings
+function longestWord(stringOfWords){
+    let word = stringOfWords.split(' ')
+    let result = ''
+    for(i = 0; i < word.length; i++){
+        if(word[i].length >= result.length){
+            result = word[i]
+        }
+    }
+    return result
+}
+
+// 135. Minimum Steps (Array Series #6)
+function minimumSteps(numbers, value){
+    let temp = 0
+    numbers = numbers.sort((a, b) => a - b)
+    for(let i = 0;i < numbers.length; i++){
+        temp +=numbers[i]
+        if(temp >= value){
+            return i
+        }
+    }
+}
