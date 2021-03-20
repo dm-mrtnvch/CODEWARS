@@ -987,3 +987,36 @@ function minimumSteps(numbers, value){
         }
     }
 }
+
+// 136. All unique
+function hasUniqueChars(str){
+    return new Set(str).size === str.length;
+}
+
+// 137. Simple Fun #37: House Numbers Sum
+function houseNumbersSum(inputArray) {
+    return inputArray.slice(0, inputArray.indexOf(0)).reduce((total, houseNumber) => total + houseNumber, 0)
+}
+
+// 138. Consecutive items
+function consecutive(arr, a, b) {
+    return Math.abs(arr.indexOf(a) - arr.indexOf(b)) == 1;
+}
+
+// 139. Complete The Pattern #2
+function pattern(n){
+    if (n < 1) return '';
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        let str = ''
+        for (let j = n; j > i; j--)
+            str += j
+        arr.push(str);
+    }
+    return arr.join('\n');
+}
+
+// 140. Help the Fruit Guy
+function removeRotten(bagOfFruits){
+    return bagOfFruits ? bagOfFruits.map(x => x.toLowerCase().replace(/rotten/ig, '')) : []
+}
