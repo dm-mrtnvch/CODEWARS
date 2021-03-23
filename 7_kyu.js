@@ -1020,3 +1020,20 @@ function pattern(n){
 function removeRotten(bagOfFruits){
     return bagOfFruits ? bagOfFruits.map(x => x.toLowerCase().replace(/rotten/ig, '')) : []
 }
+
+// 141. By 3, or not by 3? That is the question . . .
+function divisibleByThree(str){
+    return str.split('').reduce((a, b) => a - b, 0) % 3 === 0
+}
+
+// 142. Maximum Gap (Array Series #4)
+function maxGap (numbers){
+    let result = []
+    let sortedNumbers = numbers.sort((a, b) => a - b)
+    for(let i = 1; i < sortedNumbers.length; i++)
+        result.push(numbers[i] - numbers[i - 1])
+    return Math.max(...result)
+}
+
+// 143. How many arguments
+const args_count = (...arguments) => arguments.length
