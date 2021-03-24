@@ -1037,3 +1037,25 @@ function maxGap (numbers){
 
 // 143. How many arguments
 const args_count = (...arguments) => arguments.length
+
+// 144. Basic Math (Add or Subtract)
+function calculate(str) {
+    return ('' + str
+            .split('plus')
+            .join(' ')
+            .split('minus')
+            .join(' -')
+            .split(' ')
+            .reduce((total, number) => total + Number(number), 0)
+    )
+}
+
+// 145. Consecutive Ducks
+function consecutiveDucks(num) {
+    return !Number.isInteger( Math.log2(num) );
+}
+
+// 146. Vampire Numbers
+let vampire_test = function(a, b){
+    return ('' + a + b).split('').sort().join() == ('' + (a * b)).split('').sort().join();
+}
