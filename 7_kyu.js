@@ -1059,3 +1059,18 @@ function consecutiveDucks(num) {
 let vampire_test = function(a, b){
     return ('' + a + b).split('').sort().join() == ('' + (a * b)).split('').sort().join();
 }
+
+// 147. Discover The Original Price
+function discoverOriginalPrice(discountedPrice, salePercentage){
+    return (discountedPrice/((100-salePercentage))*100).toFixed(2)*1
+}
+
+// 148. Switcheroo
+function switcheroo(x){
+    return x.replace(/[ab]/g, match => match === 'a' ? 'b' : 'a')
+}
+
+// 149. GCD sum
+function solve(s,g){
+    return s%g ? -1 : [g, s-g]
+}
