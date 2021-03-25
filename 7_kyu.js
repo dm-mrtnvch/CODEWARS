@@ -1070,6 +1070,7 @@ function switcheroo(x){
     return x.replace(/[ab]/g, match => match === 'a' ? 'b' : 'a')
 }
 
+
 // 149. GCD sum
 function solve(s,g){
     return s%g ? -1 : [g, s-g]
