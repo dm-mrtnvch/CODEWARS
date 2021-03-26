@@ -1070,8 +1070,26 @@ function switcheroo(x){
     return x.replace(/[ab]/g, match => match === 'a' ? 'b' : 'a')
 }
 
-
 // 149. GCD sum
 function solve(s,g){
     return s%g ? -1 : [g, s-g]
+}
+
+// 150. JavaScript Array Filter
+function getEvenNumbers(numbersArray){
+    return numbersArray.filter(function(n){
+        return n % 2 == 0;
+    });
+}
+
+// 151. String matchup
+function solve(a,b){
+    return b.map(x => a.filter(n => n === x).length);
+}
+
+// 152. Summy
+function summy(stringOfInts){
+    return stringOfInts
+        .split(' ')
+        .reduce((total, value) => total + Number(value), 0)
 }
