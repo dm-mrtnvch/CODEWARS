@@ -1093,3 +1093,24 @@ function summy(stringOfInts){
         .split(' ')
         .reduce((total, value) => total + Number(value), 0)
 }
+
+// 153. Sort by Last Char
+function last(x){
+    return x.split(' ').sort((a,b) => a.slice(-1).localeCompare(b.slice(-1)) )
+}
+
+// 154. Greet Me
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
+}
+
+var greet = function(name) {
+    return "Hello " + name.capitalize() + "!";
+};
+
+// 155. Sum even numbers
+function sumEvenNumbers(input) {
+    let sum = 0;
+    for (let i = 0; i < input.length; i++) if (input[i] % 2 === 0) sum += input[i];
+    return sum;
+}
