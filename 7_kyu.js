@@ -1114,3 +1114,21 @@ function sumEvenNumbers(input) {
     for (let i = 0; i < input.length; i++) if (input[i] % 2 === 0) sum += input[i];
     return sum;
 }
+
+// 156. Regexp Basics - is it a letter?
+String.prototype.isLetter = function() {
+    const string = this.slice();
+    if (string.length !== 1) return false;
+    if (string.match(/[a-zA-Z]/)) return true
+    return false
+}
+
+// 157. Is It Negative Zero (-0)?
+function isNegativeZero(n) {
+    return Object.is(0, -n)
+}
+
+// 158. Sort the Gift Code
+function sortGiftCode(code){
+    return code.split('').sort().join('');
+}
