@@ -1132,3 +1132,18 @@ function isNegativeZero(n) {
 function sortGiftCode(code){
     return code.split('').sort().join('');
 }
+
+// 159. Spacify
+function spacify(str) {
+    return [...str].join(' ');
+}
+
+// 160. Nth Root of a Number
+function root(x, n) {
+    return Math.pow(x, 1/n);
+}
+
+// 161. Spacify
+function spacify(str) {
+    return [...str].join(' ');
+}
