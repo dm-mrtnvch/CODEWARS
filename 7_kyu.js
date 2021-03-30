@@ -1147,3 +1147,26 @@ function root(x, n) {
 function spacify(str) {
     return [...str].join(' ');
 }
+
+
+// 162. Boiled Eggs
+function cookingTime(eggs) {
+    return 5 * Math.ceil(eggs / 8);
+}
+
+// 163. Ultimate Array Reverser
+const ultimateReverse = s => {
+    let string=s.join('').split('').reverse();
+    let array=[];
+    for (let i=0;i<s.length;i++){
+        array.push(string.splice(0,s[i].length).join(''))
+    }
+    return array;
+};
+
+// 164. Series of integers from m to n
+function generateIntegers(m, n) {
+    const array = []
+    for(let i = m; i <= n; i++) array.push(i)
+    return array
+}
