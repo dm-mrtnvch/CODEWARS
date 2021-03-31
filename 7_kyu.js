@@ -1170,3 +1170,23 @@ function generateIntegers(m, n) {
     for(let i = m; i <= n; i++) array.push(i)
     return array
 }
+
+// 165. Smallest value of an array
+function min(arr, toReturn) {
+    if (toReturn === 'value'){
+        return Math.min(...arr)
+    }
+    return arr.indexOf(Math.min(...arr))
+}
+
+// 166. Odd-Even String Sort
+function sortMyString(S) {
+    let even = S.split('').filter((v, i) => i % 2 === 0).join('')
+    let odd = S.split('').filter((v, i) => i % 2 !== 0).join('')
+    return even + ' ' + odd
+}
+
+// 167. Simple string reversal II
+function solve(st,a,b){
+    return st.slice(0, a) + st.slice(a , b + 1).split('').reverse().join('') + st.slice(b + 1);
+}
