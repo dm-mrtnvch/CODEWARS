@@ -1190,3 +1190,24 @@ function sortMyString(S) {
 function solve(st,a,b){
     return st.slice(0, a) + st.slice(a , b + 1).split('').reverse().join('') + st.slice(b + 1);
 }
+
+// 168. Scrolling Text
+function scrollingText(text){
+    text = text.toUpperCase();
+    return [...text].map((_, i) => text.slice(i) + text.slice(0, i));
+}
+
+// 169. Doubleton number
+function doubleton(num) {
+    while (true) {
+        num++;
+        if (new Set(String(num)).size === 2) {
+            return num;
+        }
+    }
+}
+
+// 170. Unique Sum
+function uniqueSum(lst){
+    return lst.length ? [...new Set(lst)].reduce((a, b) => a + b, 0) : null
+}
