@@ -1211,3 +1211,18 @@ function doubleton(num) {
 function uniqueSum(lst){
     return lst.length ? [...new Set(lst)].reduce((a, b) => a + b, 0) : null
 }
+
+// 171. Filter the number
+var FilterString = function(value) {
+    return parseInt(value.replace(/[a-z]/gi,''));
+}
+
+// 172. Number Of Occurrences
+Array.prototype.numberOfOccurrences = function(number) {
+    return this.filter((value) => value === number).length
+}
+
+// 173. Insert dashes
+function insertDash(num) {
+    return num.toString().replace(/[13579](?=[13579])/g, "$&-");
+}
