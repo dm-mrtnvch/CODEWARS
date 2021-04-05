@@ -1226,3 +1226,25 @@ Array.prototype.numberOfOccurrences = function(number) {
 function insertDash(num) {
     return num.toString().replace(/[13579](?=[13579])/g, "$&-");
 }
+
+// 174. Exclamation marks series #5: Remove all exclamation marks from the end of words
+function remove(s) {
+    return s
+        .split(" ")
+        .map((el) => el.replace(/!+$/gi, ""))
+        .join(" ");
+}
+
+// 175. Dominant array elements
+function solve(arr){
+    return arr.filter((a, b) => arr.slice(b + 1).every(c => c < a));
+};
+
+// 176. Elevator Distance
+function elevatorDistance(array) {
+    let distance = 0;
+    for (let i=0; i<array.length - 1; i++){
+        distance += Math.abs(array[i] - array[i+1]);
+    }
+    return distance;
+}
