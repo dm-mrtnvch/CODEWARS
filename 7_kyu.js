@@ -1248,3 +1248,27 @@ function elevatorDistance(array) {
     }
     return distance;
 }
+
+// 177. Least Larger
+function leastLarger(a, i) {
+    let target = a[i], x = a.filter(num => num > target), y = Math.min(...x);
+    return a.findIndex(num => num === y)
+}
+
+// 178. Graceful Tipping
+function gracefulTipping(bill) {
+    const c = bill * 115 / 100, m = c < 10 ? 1 : 5 * 10 ** Math.floor(Math.log10(c) - 1);
+    return Math.ceil(c / m) * m;
+}
+
+// 179. String doubles
+function doubles(s) {
+    const cs = [];
+    for (const c of s) {
+        if (cs.length != 0 && cs[cs.length - 1] == c)
+            cs.pop();
+        else
+            cs.push(c);
+    }
+    return cs.join('');
+}
