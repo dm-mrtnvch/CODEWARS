@@ -1272,3 +1272,24 @@ function doubles(s) {
     }
     return cs.join('');
 }
+
+// 180. Scaling Squared Strings
+function scale(strng, k, n) {
+    return strng.split('\n').map(v=>v.split('').map(v=>(v).repeat(k)).join(''))
+        .map(v=>(v+' ').repeat(n)).map(v=>v.trim().replace(/ /g,'\n')).join('\n')
+}
+
+// 181. Count salutes
+function countSalutes(hallway) {
+    let s=0, r=0;
+    for(let x of hallway){
+        if(x =='>') r++;
+        if(x =='<') s+=r;
+    }
+    return 2*s;
+}
+
+// 182. Thinking & Testing: A and B?
+function testit(a,b){
+    return a|b;
+}
