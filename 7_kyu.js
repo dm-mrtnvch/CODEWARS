@@ -1293,3 +1293,20 @@ function countSalutes(hallway) {
 function testit(a,b){
     return a|b;
 }
+
+// 183. Thinking & Testing : Uniq or not Uniq
+function testit(a, b) {
+    a = [...new Set(a)];
+    b = [...new Set(b)];
+    return a.concat(b).sort((a, b) => a - b);
+}
+
+// 184. Thinkful - List Drills: Longest word\
+function longest(words) {
+    return Math.max(...words.map(word => word.length));
+}
+
+// 185. Area of an arrow
+function arrowArea(a,b) {
+    return (a*b/4).toFixed(2)*1
+}
