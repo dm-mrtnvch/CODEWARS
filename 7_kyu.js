@@ -1310,3 +1310,22 @@ function longest(words) {
 function arrowArea(a,b) {
     return (a*b/4).toFixed(2)*1
 }
+
+// 186. String prefix and suffix
+function solve(s) {
+    return s.match(/^(.*).*\1$/)[1].length;
+}
+
+// 187. Spoonerize Me
+function spoonerize(words) {
+    const array = words.split(' ')
+    return array[1][0] + array[0].slice(1) + ' ' + array[0][0] + array[1].slice(1)
+}
+
+// 188. Sort an array by value and index
+function sortByValueAndIndex(array) {
+    return array
+        .map((x, i) => [x, x * i + x])
+        .sort((a, b) => a[1] - b[1])
+        .map((a) => a[0])
+}
