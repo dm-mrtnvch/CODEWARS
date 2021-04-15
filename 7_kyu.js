@@ -1329,3 +1329,20 @@ function sortByValueAndIndex(array) {
         .sort((a, b) => a[1] - b[1])
         .map((a) => a[0])
 }
+
+// 189. Make them bark!
+Dog.prototype.bark = function() {
+    return 'Woof!'
+}
+
+// 190. Help Bob count letters and digits.
+function countLettersAndDigits(input) {
+    return (input.match(/\d|[a-z]/gi) || []).length;
+}
+
+// 191. Minimum to multiple
+function minimum(a, x) {
+    for(let i = 0; i < x; i++) {
+    if((a - i) % x === 0 || (a + i) % x === 0) {
+    return i;
+}
