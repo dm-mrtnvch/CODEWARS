@@ -1346,3 +1346,26 @@ function minimum(a, x) {
     if((a - i) % x === 0 || (a + i) % x === 0) {
     return i;
 }
+
+// 192. esreveR
+reverse = function(array) {
+    return array.reduce( function(a,b){ return [b].concat(a) }, []);
+}
+
+// 193. Powers of 3
+function largestPower(n){
+    let result = 0;
+    while (3 ** result < n) {
+        result++;
+    }
+    return result - 1;
+}
+
+// 194. Find all non-consecutive numbers
+function allNonConsecutive (arr) {
+    const array = [];
+    for (let i = 0; i < arr.length - 1; i++){
+        if(arr[i + 1] - 1 !== arr[i]) array.push({i : i + 1, n : arr[i + 1]})
+    }
+    return array
+}
