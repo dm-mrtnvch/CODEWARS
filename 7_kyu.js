@@ -1369,3 +1369,22 @@ function allNonConsecutive (arr) {
     }
     return array
 }
+
+// 195. The Office IV - Find a Meeting Room
+function meeting(x){
+    if (x.indexOf('O')===-1) return'None available!'
+    return x.indexOf('O')
+}
+
+// 196. Say hello!
+function greet(name) {
+    if(name === null || name.length === 0) return null;
+    return `hello ${name}!`;
+}
+
+// 197. How many urinals are free?
+function getFreeUrinals(urinals) {
+    if ( urinals.includes("11"))
+        return -1;
+    return ( urinals.match( /(^|0)0(?!1)/g ) || [] ).length;
+}
