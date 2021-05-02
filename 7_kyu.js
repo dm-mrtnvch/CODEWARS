@@ -1388,3 +1388,28 @@ function getFreeUrinals(urinals) {
         return -1;
     return ( urinals.match( /(^|0)0(?!1)/g ) || [] ).length;
 }
+
+// 198. Computer problem series #1: Fill the Hard Disk Drive
+    function save(sizes, hd) {
+        for (var i=0;i<sizes.length;i++){
+            if (sizes.slice(0,1+i).reduce((a,b)=>a+b,0)>hd) return i
+        }
+        return i
+    }
+
+// 199. Letterbox Paint-Squad
+const paintLetterboxes = (start, end) => {
+    let res = Array(10).fill(0);
+    for (let i = start; i <= end; i++) {
+        for (let n of (i + '')) {
+            res[n]++;
+        }
+    }
+    return res;
+}
+
+// 200. Last
+function last(list){
+    var last = arguments[arguments.length - 1];
+    return last[last.length - 1] || last;
+}
