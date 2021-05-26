@@ -1413,3 +1413,26 @@ function last(list){
     var last = arguments[arguments.length - 1];
     return last[last.length - 1] || last;
 }
+
+// 201. Simple Fun #136: Missing Values
+function missingValues(arr) {
+    let x=0;
+    let y=0;
+    for (let i=0;i<arr.length;i++){
+        if (arr.filter(v=>v===arr[i]).length===2) y=arr[i]
+        if (arr.filter(v=>v===arr[i]).length===1) x=arr[i]
+    }
+    return x*x*y
+}
+
+// 202. Calculate Two People's Individual Ages
+function getAges(sum,difference){
+    if (difference<0||sum<0) return null;
+    sum=sum/2
+    difference/=2
+    if (sum+difference<0||sum-difference<0) return null;
+    return [sum+difference,sum-difference]
+};
+
+// 203. Bingo ( Or Not )
+const bingo = array => ([2, 7, 9, 14, 15].every(bingoValue => array.includes(bingoValue)) ? 'WIN' : 'LOSE')
