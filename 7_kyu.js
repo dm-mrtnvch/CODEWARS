@@ -1436,3 +1436,27 @@ function getAges(sum,difference){
 
 // 203. Bingo ( Or Not )
 const bingo = array => ([2, 7, 9, 14, 15].every(bingoValue => array.includes(bingoValue)) ? 'WIN' : 'LOSE')
+
+// 204. Odder Than the Rest
+function oddOne(arr) {
+    return arr.indexOf(arr.find(v => v % 2 !== 0));
+}
+
+// 205. Head, Tail, Init and Last
+function head(arr){
+    return +(arr.slice(0,1))
+}
+function tail(arr){
+    return (arr.slice(1))
+}
+function init(arr){
+    return (arr.slice(0,arr.length-1))
+}
+function last(arr){
+    return +(arr.slice(arr.length-1))
+}
+
+// 206. L2: Triple X
+function tripleX(str){
+    return /^[^x]*xxx/.test(str)
+}
