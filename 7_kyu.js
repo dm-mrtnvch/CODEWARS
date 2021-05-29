@@ -1460,3 +1460,20 @@ function last(arr){
 function tripleX(str){
     return /^[^x]*xxx/.test(str)
 }
+
+// 207. Suitcase packing
+function fit_in(a, b, m, n) {
+    if (a>n||b>n||a>m||b>m) return false
+    return !(a + b > m && a + b > n)
+}
+
+// 208. Borrower Speak
+const borrow = s => s.replace(/\W/g, '').toLowerCase();
+
+// 209. makeBackronym
+const makeBackronym = string =>
+    string
+        .toUpperCase()
+        .split('')
+        .reduce((backronym, char) => `${backronym} ${dict[char]}`, '')
+        .slice(1)
