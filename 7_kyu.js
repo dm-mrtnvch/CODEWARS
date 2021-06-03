@@ -1477,3 +1477,19 @@ const makeBackronym = string =>
         .split('')
         .reduce((backronym, char) => `${backronym} ${dict[char]}`, '')
         .slice(1)
+
+// 210. Snail crawls up
+function snail(height, up, down) {
+    if (up <= 0 || down < 0 || height <= 0) return false
+    for (let i=up,j=0;;i+=up-down,j++){
+        if (i>=height) return j+1
+    }
+}
+
+// 211. Even odd disparity
+function solve(a){
+    return a.filter(b=>b%2===0).length - a.filter(c=>c%2===1).length;
+};
+
+// 212. Digital cypher vol 2
+const decode = (c,n) =>  c.map((a,i)=>String.fromCharCode(96 + a-parseInt(String(n)[i%String(n).length]))).join('');
