@@ -1493,3 +1493,37 @@ function solve(a){
 
 // 212. Digital cypher vol 2
 const decode = (c,n) =>  c.map((a,i)=>String.fromCharCode(96 + a-parseInt(String(n)[i%String(n).length]))).join('');
+
+// 213. Merge two arrays
+const mergeArrays = (a, b) =>
+    Array.from({ length: Math.max(a.length, b.length) }).reduce((result, _, index) => {
+        if (a[index] && b[index]) return [...result, a[index], b[index]]
+        if (a[index]) return [...result, a[index]]
+        if (b[index]) return [...result, b[index]]
+        return result
+    }, [])
+
+// 214. MinMinMax
+function minMinMax(array) {
+    const max=Math.max(...array);
+    const min=Math.min(...array);
+    let minAbs=0;
+    for (let i=min;i<=max;i++)
+    {
+        if (!array.includes(i)){minAbs=i;break}
+    }
+    return [min,minAbs,max]
+}
+
+// 215. The Pony Express
+function riders(stations) {
+    let riders=0;
+    let sum=0;
+    for (let i=0;i<stations.length;i++){
+        sum+=stations[i]
+        if (sum>100){
+            riders++
+            sum=0;
+            i--}}
+    return riders+1
+}
