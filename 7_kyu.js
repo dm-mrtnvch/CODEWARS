@@ -1527,3 +1527,25 @@ function riders(stations) {
             i--}}
     return riders+1
 }
+
+// 216. Incrementer
+function incrementer(num) {
+    return num.map((a,i) => (a+i+1)%10);
+}
+
+// 217. Consecutive Differences
+function differences(a) {
+    while(a.length > 1) {
+        for(let i = 0; i < a.length - 1; i++) {
+            a[i] = Math.abs(a[i] - a[i + 1]);
+        }
+        a.length = a.length - 1;
+    }
+    return a[0];
+}
+
+// 218. String to integer conversion
+function myParseInt(str) {
+    if (str.trim().match(/[\D]/)) return 'NaN'
+    return parseInt(str)
+}
