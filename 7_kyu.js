@@ -1549,3 +1549,26 @@ function myParseInt(str) {
     if (str.trim().match(/[\D]/)) return 'NaN'
     return parseInt(str)
 }
+
+// 219. Replace all items
+const replaceAll = (seq, find, replace) =>
+    typeof seq === 'string'
+        ? seq.split(find).join(replace)
+        : seq.map(value => (value === find ? replace : value))
+
+// 220. String Scramble
+function scramble(str, arr) {
+    for(let r=[],i=0;i<arr.length;i++) r[arr[i]]=str[i]
+    return r.join("")
+};
+
+// 221. Make Class
+function makeClass(...properties) {
+    return class {
+        constructor(...props) {
+            properties.forEach((prop, index) => {
+                this[prop] = props[index]
+            })
+        }
+    }
+}
