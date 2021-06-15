@@ -1572,3 +1572,19 @@ function makeClass(...properties) {
         }
     }
 }
+
+// 222. V A P O R C O D E
+function vaporcode(string) {
+    return string.split(' ').join('').split('').join('  ').toUpperCase()
+}
+
+// 223. Word to binary
+function wordToBin(str){
+    return str.split('').map(v=>'0'+v.charCodeAt().toString(2));
+}
+
+// 224. Hells Kitchen
+let gordon = a => a
+    .toUpperCase()
+    .replace(/\w+/g, '$&!!!!')
+    .replace(/[AEIOU]/g, v => v == 'A' ? '@' : '*');
