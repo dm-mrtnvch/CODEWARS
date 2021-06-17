@@ -1588,3 +1588,17 @@ let gordon = a => a
     .toUpperCase()
     .replace(/\w+/g, '$&!!!!')
     .replace(/[AEIOU]/g, v => v == 'A' ? '@' : '*');
+
+// 225. Name Array Capping
+const capMe = names =>
+    names.map(
+        name => `${name.slice(0, 1).toUpperCase()}${name.slice(1).toLowerCase()}`
+    )
+
+// 226. Complete Series
+let completeSeries = arr => new Set(arr).size === arr.length ? [...Array(Math.max(...arr)+1).keys()] : [0];
+
+// 227. Find twins
+function elimination(arr){
+    return arr.find(number => arr.indexOf(number) !== arr.lastIndexOf(number)) || null
+}
