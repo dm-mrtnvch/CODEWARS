@@ -1602,3 +1602,19 @@ let completeSeries = arr => new Set(arr).size === arr.length ? [...Array(Math.ma
 function elimination(arr){
     return arr.find(number => arr.indexOf(number) !== arr.lastIndexOf(number)) || null
 }
+
+//228. Square Pi's
+function squarePi(digits){
+    let pi = '31415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679'
+    return Math.ceil(Math.sqrt(pi.slice(0,digits).split(``).map(v=>v*v).reduce((a,b)=>a+b,0)))
+}
+
+// 229. Katastrophe!
+function strongEnough(earthquake, age){
+    earthquake = earthquake.reduce((s, v) => s * v.reduce((x, s) => x + s, 0), 1);
+    var strength = 1000 * Math.pow(.99, age);
+    return strength > earthquake ? 'Safe!' : 'Needs Reinforcement!';
+}
+
+// 230. Between Extremes
+        const betweenExtremes = n => Math.max(...n) - Math.min(...n);
