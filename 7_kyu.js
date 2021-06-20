@@ -1618,3 +1618,27 @@ function strongEnough(earthquake, age){
 
 // 230. Between Extremes
         const betweenExtremes = n => Math.max(...n) - Math.min(...n);
+
+// 231. C.Wars
+const initials = n =>
+    n
+        .split(' ')
+        .map(
+            (word, index, array) =>
+                index === array.length - 1
+                    ? word.charAt(0).toUpperCase() + word.slice(1)
+                    : word.charAt(0).toUpperCase()
+        )
+        .join('.')
+
+// 232. Random case
+function randomCase(x) {
+    return x.split('')
+        .map(function(e) { return Math.random() < 0.5 ? e.toUpperCase() : e.toLowerCase(); })
+        .join('');
+}
+
+// 233. Start with a Vowel
+function vowelStart(str){
+    return str.replace(/[^a-z0-9]/gi,'').replace(/([aeiou])/gi,' $1').trim().toLowerCase()
+}
