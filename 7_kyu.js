@@ -1642,3 +1642,17 @@ function randomCase(x) {
 function vowelStart(str){
     return str.replace(/[^a-z0-9]/gi,'').replace(/([aeiou])/gi,' $1').trim().toLowerCase()
 }
+
+// 234. Sum of numerous arguments
+function findSum(...args){
+    return args.reduce(
+        (total, value) => (total < 0 || value < 0 ? -1 : total + value), 0)
+}
+
+// 235. Bases Everywhere
+let baseFinder = seq => new Set(seq.join("")).size;
+
+// 236. Simple string matching
+function solve(a,b){
+    return new RegExp(`^${a.replace(/\*/g,'.*')}$`).test(b);
+}
