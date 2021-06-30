@@ -1656,3 +1656,25 @@ let baseFinder = seq => new Set(seq.join("")).size;
 function solve(a,b){
     return new RegExp(`^${a.replace(/\*/g,'.*')}$`).test(b);
 }
+
+// 237. Hit Count
+function counterEffect(hitCount) {
+    return [...hitCount].reduce(
+        (result, number) => [...result, [...new Array(Number(number) + 1).keys()]],
+        []
+    )
+}
+
+// 238. Simple equation reversal
+function solve(eq){
+    return eq.split('').reverse().join('').replace(/(\d+)/gi,$1=>{
+        return $1.split('').reverse().join('')})
+}
+
+// 239. Caffeine Script
+function caffeineBuzz(n){
+    if (n % 12 === 0) return "CoffeeScript";
+    if (n % 6 === 0) return "JavaScript";
+    if (n % 3 === 0)  return "Java";
+    return "mocha_missing!";
+}
