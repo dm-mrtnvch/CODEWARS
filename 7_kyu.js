@@ -1678,3 +1678,25 @@ function caffeineBuzz(n){
     if (n % 3 === 0)  return "Java";
     return "mocha_missing!";
 }
+
+// 240. String Task
+function stringTask(s){
+    return s.replace(/[aeiuoy]/gi,'').split``.map(v=>'.'+v).join``.toLowerCase()
+}
+
+// 241. Simple Fun #3: Late Ride
+function lateRide(n) {
+    return ((n / 60 | 0)+ '' + n % 60).split('').reduce((start,next)=>start+next*1,0);
+}
+
+// 242. Histogram - H1
+const histogram = results =>
+    results
+        .map((number, index) => {
+            const dice = `${index + 1}|${'#'.repeat(number)}`
+            const result = number > 0 ? `${dice} ${number}` : dice
+
+            return index === 0 ? `${result}\n` : result
+        })
+        .reverse()
+        .join('\n');
