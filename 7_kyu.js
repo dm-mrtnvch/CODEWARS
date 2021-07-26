@@ -1700,3 +1700,32 @@ const histogram = results =>
         })
         .reverse()
         .join('\n');
+
+// 243. Tail Swap
+function tailSwap(arr) {
+    let head=[];
+    let tail=[];
+    arr.map(v=>v.split(':').map((v,i,arr)=>i%2==0?head.push(v):tail.push(v)))
+    tail=tail.reverse();
+    head=head.map((v,i)=>v+':'+tail[i])
+    return head;
+}
+
+// 244. Simple directions reversal
+function solve(arr) {
+    const map = { Begin: 'Begin', Left: 'Right', Right: 'Left' }
+    const parts = arr.map(step => step.split(' on '))
+    const steps = [];
+    for (let i = 0; i < arr.length; i++)
+        steps.unshift(map[parts[(i + 1) % arr.length][0]] + ' on ' + parts[i][1]);
+    return steps;
+}
+
+// 245. Number to digit tiers
+function createArrayOfTiers(num) {
+    let arr=[];
+    for (let i=0;i<num.toString().length;i++){
+        arr.push(num.toString().slice(0,i+1))
+    }
+    return arr;
+}
