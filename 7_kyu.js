@@ -1729,3 +1729,19 @@ function createArrayOfTiers(num) {
     }
     return arr;
 }
+
+// 246. Find min and max
+function getMinMax(arr){
+    return [Math.min(...arr),Math.max(...arr)];
+};
+
+// 247. All Star Code Challenge #3
+var removeVowels = function(str){
+    return str.replace(/[auioe]/gi,'')
+}
+
+// 248. Grid index
+const gridIndex = (grid, indices) => {
+    let flat = grid.flat(2);
+    return indices.map(indice => flat[indice -1]).join('');
+}
