@@ -1745,3 +1745,21 @@ const gridIndex = (grid, indices) => {
     let flat = grid.flat(2);
     return indices.map(indice => flat[indice -1]).join('');
 }
+
+// 249. filterEvenLengthWords
+function filterEvenLengthWords(words) {
+    return words.filter(el => el.length % 2 === 0);
+}
+
+// 250. Cartesian neighbors
+function cartesianNeighbor(x, y){
+    return [[x-1, y-1], [x-1, y], [x-1, y+1], [x, y-1], [x, y+1], [x+1, y-1], [x+1,y], [x+1, y+1]];
+}
+
+// 251. Building Strings From a Hash
+function solution(pairs){
+    let arr = [];
+    for(let x in pairs)
+        arr.push(`${x} = ${pairs[x]}`)
+    return arr.join(",");
+}
