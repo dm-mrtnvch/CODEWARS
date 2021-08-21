@@ -1763,3 +1763,19 @@ function solution(pairs){
         arr.push(`${x} = ${pairs[x]}`)
     return arr.join(",");
 }
+
+// 252. The Office III - Broken Photocopier
+const broken = x => x.replace(/./g, x => x ^ 1)
+
+// 253. Convert the score
+function scoreboard(string) {
+    let dict={nil:0,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9}
+    let arr=[];
+    string.split` `.map(v=>arr.push(dict[v]))
+    return arr.filter(v=>v!==undefined)
+}
+
+// 254. Exclamation marks series #3: Remove all exclamation marks from sentence except at the end
+function remove(s){
+    return s.replace(/!+([^!])/g, '$1')
+}
